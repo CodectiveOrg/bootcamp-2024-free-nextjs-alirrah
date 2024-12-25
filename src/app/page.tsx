@@ -1,10 +1,10 @@
-type Product =  {
-  productId: number,
-  productName: string,
-  unitPrice: number,
-}
+type Product = {
+  productId: number;
+  productName: string;
+  unitPrice: number;
+};
 
-export default async  function Home() {
+export default async function Home() {
   const res = await fetch("https://apitester.ir/api/Products", {
     cache: "no-store",
   });
@@ -17,7 +17,9 @@ export default async  function Home() {
 
       <ul>
         {products.map((product) => (
-            <li key={product.productId}>{product.productName} - {product.unitPrice}</li>
+          <li key={product.productId}>
+            {product.productName} - {product.unitPrice}
+          </li>
         ))}
       </ul>
     </main>

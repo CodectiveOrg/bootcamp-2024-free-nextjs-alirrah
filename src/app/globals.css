@@ -1,31 +1,9 @@
 :root {
   --color-dark-blue: hsl(214, 96%, 10%);
   --color-middle-blue: hsl(214, 94%, 52%);
-  --color-sky-blue: hsl(199, 94%, 56%);
   --color-light-blue: hsl(200, 92%, 95%);
 
   --color-secondary: hsl(0, 0%, 100%);
-  --color-text-body: hsl(213, 19%, 29%);
-  --color-success: hsl(126, 79%, 42%);
-  --color-warning: hsl(32, 83%, 55%);
-  --color-error: hsl(0, 79%, 52%);
-
-  --gradient: linear-gradient(
-    to left,
-    hsla(199, 94%, 56%, 0) 0%,
-    hsla(199, 94%, 56%, 0.07) 50%,
-    hsl(199, 94%, 56%) 100%
-  );
-  --gradient-1: linear-gradient(
-    to left,
-    hsla(199, 94%, 56%, 0.47) 0%,
-    hsla(199, 94%, 56%, 0) 100%
-  );
-  --gradient-2: linear-gradient(
-    to left,
-    hsl(200, 92%, 95%) 0%,
-    hsla(200, 92%, 95%, 0) 100%
-  );
 
   --border-radius: 0.875rem;
 
@@ -33,8 +11,6 @@
   --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);
 
   --animation-duration-fast: 0.1s;
-  --animation-duration-normal: 0.5s;
-  --animation-duration-slow: 1s;
 }
 
 *,

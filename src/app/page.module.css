@@ -1,0 +1,7 @@
+.home {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+
+  min-block-size: 100%;
+}

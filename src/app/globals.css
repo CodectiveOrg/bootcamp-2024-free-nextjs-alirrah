@@ -70,6 +70,12 @@ a {
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+
   > * {
     padding-inline: var(--full-width-padding-inline);
   }

@@ -9,7 +9,7 @@ import { MenuItemType } from "@/types/menuItem.type";
 
 import styles from "./header.module.css";
 
-export default function HeaderComponent({ links }: { links: MenuItemType[] }) {
+export default function HeaderComponent({ menu }: { menu: MenuItemType[] }) {
   const pathname = usePathname();
 
   return (
@@ -17,7 +17,7 @@ export default function HeaderComponent({ links }: { links: MenuItemType[] }) {
       <div className={styles.box}>
         <nav>
           <ul>
-            {links.map((link) => (
+            {menu.map((link) => (
               <li key={link.key}>
                 <Link
                   href={link.link}

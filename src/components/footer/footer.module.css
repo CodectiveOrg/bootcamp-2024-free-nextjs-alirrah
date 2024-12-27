@@ -1,0 +1,48 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .logo {
+    display: flex;
+    align-items: flex-end;
+
+    > img {
+      block-size: 2rem;
+      inline-size: auto;
+    }
+
+    > p {
+      color: var(--color-middle-blue);
+      font-weight: 700;
+    }
+  }
+
+  .line {
+    inline-size: 100%;
+    block-size: 0.15rem;
+
+    background-color: var(--color-dark-blue);
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    inline-size: 100%;
+
+    padding-inline: 1rem;
+
+    > ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      svg {
+        font-size: 1.5rem;
+        color: var(--color-middle-blue);
+      }
+    }
+  }
+}

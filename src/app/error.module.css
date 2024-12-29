@@ -1,6 +1,6 @@
 .error {
   display: grid;
-  grid-template-areas: "writings visuals" "actions actions";
+  grid-template-areas: "writings visuals" "actions visuals";
   grid-template-columns: repeat(2, minmax(0, auto));
   place-content: center;
   column-gap: 4rem;
@@ -40,8 +40,8 @@
     grid-column: 1 / -1;
 
     button {
-      background-color: var(--color-primary);
-      color: var(--color-primary-opposite);
+      background-color: var(--color-middle-blue);
+      color: var(--color-secondary);
 
       padding: 0.5rem 2rem;
 

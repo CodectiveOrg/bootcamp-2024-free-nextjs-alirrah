@@ -7,11 +7,10 @@ import errorImage from "@/assets/illustrations/error.webp";
 import styles from "./error.module.css";
 
 type Props = {
-  error: Error & { digest?: string };
   reset: () => void;
 };
 
-export default function Error({ error, reset }: Props) {
+export default function Error({ reset }: Props) {
   return (
     <div className={styles["error"]}>
       <div className={styles.writings}>

@@ -14,7 +14,7 @@
     display: grid;
     align-items: center;
 
-    font-size: 1.5rem;
+    font-size: var(--fz-600);
     color: var(--color-middle-blue);
   }
 
@@ -55,6 +55,8 @@
       color: var(--color-middle-blue);
 
       cursor: pointer;
+
+      transition: var(--animation-duration-fast);
 
       svg {
         font-size: 1.5em;

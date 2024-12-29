@@ -10,10 +10,12 @@ import { MenuItemType } from "@/types/menuItem.type";
 import { socialLinkType } from "@/types/socialLink.type";
 
 import MingcuteTelegramFill from "@/icon/MingcuteTelegramFill";
-
-import "./globals.css";
 import MingcuteLinkedinFill from "@/icon/MingcuteLinkedinFill";
 import MingcuteInsFill from "@/icon/MingcuteInsFill";
+
+import "@/styles/typography.css";
+
+import "./globals.css";
 
 const vazirmatn = Vazirmatn({
   subsets: ["latin", "arabic"],

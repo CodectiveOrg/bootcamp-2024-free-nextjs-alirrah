@@ -1,0 +1,148 @@
+.filters {
+  grid-area: filters;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .delete-btn {
+    background-color: transparent;
+
+    border: 1px solid var(--color-red);
+    border-radius: var(--border-radius-middle);
+
+    padding: 0.5rem;
+
+    cursor: pointer;
+
+    color: var(--color-red);
+
+    &:hover {
+      background-color: var(--color-red);
+
+      color: var(--color-white);
+
+      transition: 0.15s;
+    }
+  }
+
+  > .box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    background-color: var(--color-light-grey);
+
+    border-radius: var(--border-radius-small);
+
+    padding: 0.5rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      max-block-size: 20rem;
+
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-middle-grey);
+
+        border-radius: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-dark-grey);
+      }
+
+      li {
+        button {
+          inline-size: 100%;
+
+          background-color: transparent;
+
+          border: none;
+          border-radius: var(--border-radius-small);
+
+          padding: 0.15rem 0.5rem;
+
+          text-align: start;
+
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--color-middle-grey);
+
+            transition: background-color 0.25s;
+          }
+        }
+      }
+    }
+
+    .gender-box {
+      display: flex;
+      flex-direction: column;
+
+      input[type="radio"] {
+        margin-inline-end: 0.25rem;
+      }
+    }
+
+    hr {
+      border-color: var(--color-middle-grey);
+    }
+
+    > .selection-box {
+      display: flex;
+      justify-content: space-between;
+
+      .hide-me {
+        display: none;
+      }
+
+      .toggle {
+        inline-size: 3rem;
+        block-size: 1.5rem;
+
+        position: relative;
+
+        display: inline-block;
+
+        background-color: var(--color-middle-grey);
+
+        border-radius: var(--border-radius-middle);
+
+        transition: background-color 0.3s;
+      }
+
+      .toggle::after {
+        content: "";
+
+        inline-size: 1rem;
+        block-size: 1rem;
+
+        position: absolute;
+        inset-block-start: 0.25rem;
+        inset-inline-start: 0.25rem;
+
+        background-color: var(--color-white);
+
+        border-radius: 50%;
+
+        transition: transform 0.3s;
+      }
+
+      input:checked + .toggle {
+        background-color: var(--color-middle-blue);
+      }
+
+      input:checked + .toggle::after {
+        transform: translateX(-1.5rem);
+      }
+    }
+  }
+}

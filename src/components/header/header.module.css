@@ -11,7 +11,7 @@
 
     padding: 1rem;
 
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-middle);
 
     nav {
       > ul {
@@ -35,7 +35,7 @@
       padding: 0.5rem 1rem;
 
       border: 1px solid currentcolor;
-      border-radius: var(--border-radius);
+      border-radius: var(--border-radius-middle);
 
       font-weight: 700;
 
@@ -43,7 +43,7 @@
 
       &:hover {
         background-color: var(--color-middle-blue);
-        color: var(--color-secondary);
+        color: var(--color-white);
 
         transition: var(--animation-duration-fast);
       }

@@ -1,0 +1,27 @@
+.ordering {
+  grid-area: ordering;
+
+  display: flex;
+  justify-content: space-between;
+
+  .box {
+    display: flex;
+    gap: 1rem;
+
+    background-color: var(--color-light-grey);
+
+    border-radius: var(--border-radius-small);
+
+    padding: 0.5rem 1rem;
+
+    select {
+      background-color: transparent;
+
+      border: none;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}

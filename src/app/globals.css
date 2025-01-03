@@ -3,9 +3,18 @@
   --color-middle-blue: hsl(214, 94%, 52%);
   --color-light-blue: hsl(200, 92%, 95%);
 
-  --color-secondary: hsl(0, 0%, 100%);
+  --color-dark-grey: rgb(153, 153, 153);
+  --color-middle-grey: hsl(0, 0%, 80%);
+  --color-light-grey: hsl(0, 0%, 96%);
 
-  --border-radius: 0.875rem;
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-red: hsl(0, 79%, 52%);
+
+  --color-gold: hsl(32, 83%, 55%);
+
+  --border-radius-middle: 0.875rem;
+  --border-radius-small: 0.5rem;
 
   --full-width: 75rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);

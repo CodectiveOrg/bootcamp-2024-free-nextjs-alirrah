@@ -50,7 +50,7 @@
       padding: 0.5rem 0.5rem;
 
       border: none;
-      border-radius: var(--border-radius);
+      border-radius: var(--border-radius-middle);
 
       color: var(--color-middle-blue);
 

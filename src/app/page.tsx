@@ -2,7 +2,7 @@ import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchB
 
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className={styles.home}>
       <GlobalSearchBoxComponent />

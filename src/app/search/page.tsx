@@ -4,7 +4,7 @@ import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchB
 
 import FilterComponents from "@/app/search/components/filters/filters.component";
 import OrderingComponent from "@/app/search/components/ordering/ordering.component";
-import ResultListComponent from "@/app/search/components/resultList/resultList.component";
+import ResultsComponent from "@/app/search/components/results/results.component";
 
 import styles from "./page.module.css";
 
@@ -33,7 +33,7 @@ export default function Page() {
           ]}
         />
         <OrderingComponent totalCount={50} />
-        <ResultListComponent
+        <ResultsComponent
           doctors={[
             {
               key: 0,

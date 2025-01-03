@@ -2,7 +2,7 @@
   grid-area: resultList;
 
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 0.5rem;
 
   li {
@@ -20,12 +20,39 @@
       display: flex;
       gap: 1rem;
 
-      img {
-        inline-size: 8rem;
-        block-size: 8rem;
+      > .image {
+        position: relative;
 
-        border: 3px solid var(--color-middle-blue);
-        border-radius: 50%;
+        img {
+          inline-size: 8rem;
+          block-size: 8rem;
+
+          border: 3px solid var(--color-middle-blue);
+          border-radius: 50%;
+        }
+
+        > svg {
+          display: none;
+
+          position: absolute;
+          inset-block-end: 0.8rem;
+          inset-inline-end: 0.8rem;
+
+          background-color: var(--color-middle-blue);
+
+          padding: 0.2rem;
+
+          border-radius: 50%;
+
+          font-size: var(--fz-500);
+          color: var(--color-white);
+        }
+
+        &.verify {
+          svg {
+            display: inline;
+          }
+        }
       }
 
       > .info {
@@ -46,6 +73,10 @@
 
           &.address {
             color: var(--color-dark-grey);
+          }
+
+          &.time {
+            font-size: var(--fz-200);
           }
         }
       }

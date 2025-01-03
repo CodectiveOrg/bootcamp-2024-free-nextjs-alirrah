@@ -1,7 +1,10 @@
 import Image, { ImageProps } from "next/image";
 
+import clsx from "clsx";
+
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
 import MingcuteStarFill from "@/icon/MingcuteStarFill";
+import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
 
 import styles from "./results.module.css";
 
@@ -14,6 +17,7 @@ type Props = {
     address: string;
     nearestTime: string;
     rating: number;
+    verify: boolean;
   }[];
 };
 
@@ -23,7 +27,10 @@ export default function ResultsComponent({ doctors }: Props) {
       {doctors.map((item) => (
         <li key={item.key}>
           <div>
-            <Image {...item.image} />
+            <div className={clsx(styles.image, item.verify && styles.verify)}>
+              <Image {...item.image} />
+              <MingcuteCheckFill />
+            </div>
             <div className={styles.info}>
               <b className={styles.title}>دکتر {item.name}</b>
               <p className={styles.category}>{item.category}</p>

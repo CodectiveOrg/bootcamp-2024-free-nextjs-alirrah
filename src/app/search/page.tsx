@@ -43,6 +43,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 1,
+              verify: true,
             },
             {
               key: 0,
@@ -52,6 +53,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 1,
+              verify: false,
             },
             {
               key: 0,
@@ -61,6 +63,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 1,
+              verify: true,
             },
             {
               key: 0,
@@ -70,6 +73,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 1,
+              verify: true,
             },
             {
               key: 0,
@@ -79,6 +83,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 4.5,
+              verify: true,
             },
             {
               key: 0,
@@ -88,6 +93,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 5,
+              verify: false,
             },
             {
               key: 0,
@@ -97,6 +103,7 @@ export default function Page() {
               address: "ننمنمن",
               nearestTime: "نمنمنمنم",
               rating: 1.6,
+              verify: false,
             },
           ]}
         />

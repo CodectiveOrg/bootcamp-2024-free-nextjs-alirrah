@@ -1,3 +1,7 @@
+"use client";
+
+import { useContext, useMemo } from "react";
+
 import Image, { ImageProps } from "next/image";
 
 import clsx from "clsx";
@@ -5,6 +9,8 @@ import clsx from "clsx";
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
 import MingcuteStarFill from "@/icon/MingcuteStarFill";
 import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
+
+import { FilterContext } from "@/app/search/providers/filters.provider";
 
 import styles from "./results.module.css";
 
@@ -22,6 +28,15 @@ type Props = {
 };
 
 export default function ResultsComponent({ doctors }: Props) {
+  const { filters } = useContext(FilterContext);
+
+  const isActive = useMemo(() => {
+    if (filters.is_verified && 1) {
+      return true;
+    }
+    return false;
+  }, [filters, 1]);
+
   return (
     <ul className={styles.resultList}>
       {doctors.map((item) => (

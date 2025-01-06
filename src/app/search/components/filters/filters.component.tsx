@@ -1,3 +1,11 @@
+"use client";
+
+import { useContext } from "react";
+
+import clsx from "clsx";
+
+import { FilterContext } from "@/app/search/providers/filters.provider";
+
 import styles from "./filters.module.css";
 
 type Props = {
@@ -5,6 +13,8 @@ type Props = {
 };
 
 export default function FiltersComponents({ categories }: Props) {
+  const { filters, changeFilters } = useContext(FilterContext);
+
   return (
     <div className={styles.filters}>
       <button className={styles["delete-btn"]}>حذف فیلتر</button>
@@ -12,8 +22,17 @@ export default function FiltersComponents({ categories }: Props) {
         <b>تخصص</b>
         <ul>
           {categories.map((item) => (
-            <li key={item.key}>
-              <button>{item.value}</button>
+            <li
+              key={item.key}
+              className={clsx(filters["is_verified"] && styles.active)}
+            >
+              <button
+                onClick={() =>
+                  changeFilters("is_verified", !filters["is_verified"])
+                }
+              >
+                {item.value}
+              </button>
             </li>
           ))}
         </ul>

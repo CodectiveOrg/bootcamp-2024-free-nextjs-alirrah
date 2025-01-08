@@ -9,7 +9,7 @@ import CardComponent from "@/components/card/card.component";
 import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
 import { FiltersType } from "@/app/search/types/filters.type";
 
-import { FilterContext } from "@/app/search/providers/filters.provider";
+import { FilterContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./filters.module.css";
 

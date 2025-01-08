@@ -4,16 +4,14 @@ import { useContext } from "react";
 
 import CardComponent from "@/components/card/card.component";
 
-import { FilterContext } from "@/app/search/providers/filters.provider";
+import { FilterContext } from "@/app/search/providers/filters/filters.provider";
+import { ItemsContext } from "@/app/search/providers/items/items.provider";
 
 import styles from "./ordering.module.css";
 
-type Props = {
-  totalCount: number;
-};
-
-export default function OrderingComponent({ totalCount }: Props) {
+export default function OrderingComponent() {
   const { changeFilters } = useContext(FilterContext);
+  const { filteredItems } = useContext(ItemsContext);
 
   return (
     <div className={styles.ordering}>
@@ -33,7 +31,7 @@ export default function OrderingComponent({ totalCount }: Props) {
           <option value="rate">محبوب ترین</option>
         </select>
       </CardComponent>
-      <p>{totalCount} نتیجه</p>
+      <p>{filteredItems.length} نتیجه</p>
     </div>
   );
 }

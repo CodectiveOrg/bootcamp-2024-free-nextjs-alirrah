@@ -1,6 +1,6 @@
 import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
 
-export type Doctor = {
+export type DoctorType = {
   id: number;
   name: string;
   image: string;

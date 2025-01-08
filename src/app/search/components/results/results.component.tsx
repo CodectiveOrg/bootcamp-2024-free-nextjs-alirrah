@@ -1,3 +1,7 @@
+"use client";
+
+import { useContext } from "react";
+
 import clsx from "clsx";
 
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
@@ -6,18 +10,16 @@ import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
 
 import CardComponent from "@/components/card/card.component";
 
-import { Doctor } from "@/app/search/types/doctor.type";
+import { ItemsContext } from "@/app/search/providers/items/items.provider";
 
 import styles from "./results.module.css";
 
-type Props = {
-  doctors: Doctor[];
-};
+export default function ResultsComponent() {
+  const { filteredItems } = useContext(ItemsContext);
 
-export default function ResultsComponent({ doctors }: Props) {
   return (
     <ul className={styles.resultList}>
-      {doctors.map((item) => (
+      {filteredItems.map((item) => (
         <li key={item.id}>
           <CardComponent className={styles.box}>
             <div>

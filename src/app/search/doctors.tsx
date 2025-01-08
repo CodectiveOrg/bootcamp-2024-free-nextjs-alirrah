@@ -1,7 +1,7 @@
 import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
-import { Doctor } from "@/app/search/types/doctor.type";
+import { DoctorType } from "@/app/search/types/doctor.type";
 
-export const doctors: Doctor[] = [
+export const doctors: DoctorType[] = [
   {
     id: 1,
     name: "پوراندخت جعفری",

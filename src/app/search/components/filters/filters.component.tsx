@@ -4,58 +4,88 @@ import { useContext } from "react";
 
 import clsx from "clsx";
 
+import CardComponent from "@/components/card/card.component";
+
+import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
+import { FiltersType } from "@/app/search/types/filters.type";
+
 import { FilterContext } from "@/app/search/providers/filters.provider";
 
 import styles from "./filters.module.css";
 
-type Props = {
-  categories: { key: number; label: string; value: string }[];
-};
+const entries = Object.entries(MedicalSpecialties);
 
-export default function FiltersComponents({ categories }: Props) {
-  const { filters, changeFilters } = useContext(FilterContext);
+export default function FiltersComponents() {
+  const { filters, changeFilters, clearAllFilters } = useContext(FilterContext);
+
+  const isMan = filters.sex === "man";
+  const isWoman = filters.sex === "woman";
+  const isVerified = filters.isVerified || false;
 
   return (
     <div className={styles.filters}>
-      <button className={styles["delete-btn"]}>حذف فیلتر</button>
-      <div className={styles.box}>
+      <button className={styles["delete-btn"]} onClick={clearAllFilters}>
+        حذف فیلتر
+      </button>
+      <CardComponent className={styles.box}>
         <b>تخصص</b>
         <ul>
-          {categories.map((item) => (
-            <li
-              key={item.key}
-              className={clsx(filters["is_verified"] && styles.active)}
-            >
+          {entries.map(([key, value]) => (
+            <li key={key}>
               <button
-                onClick={() =>
-                  changeFilters("is_verified", !filters["is_verified"])
-                }
+                className={clsx(
+                  filters[key as keyof FiltersType] && styles.active,
+                )}
+                onClick={() => {
+                  changeFilters(
+                    key as keyof FiltersType,
+                    !filters[key as keyof FiltersType],
+                  );
+                }}
               >
-                {item.value}
+                {value}
               </button>
             </li>
           ))}
         </ul>
-      </div>
-      <div className={styles.box}>
+      </CardComponent>
+      <CardComponent className={styles.box}>
         <b>جنسیت</b>
         <div className={styles["gender-box"]}>
           <label>
-            <input type="radio" name="gender" value="man" />
+            <input
+              type="radio"
+              name="gender"
+              value="man"
+              checked={isMan}
+              onClick={() => changeFilters("sex", "man")}
+            />
             آقا
           </label>
           <label>
-            <input type="radio" name="gender" value="woman" />
+            <input
+              type="radio"
+              name="gender"
+              value="woman"
+              checked={isWoman}
+              onClick={() => changeFilters("sex", "woman")}
+            />
             خانم
           </label>
         </div>
         <hr />
         <div className={styles["selection-box"]}>
           <b>منتخب نوبت آنلاین</b>
-          <input type="checkbox" id="toggle" className={styles["hide-me"]} />
+          <input
+            type="checkbox"
+            id="toggle"
+            checked={isVerified}
+            className={styles["hide-me"]}
+            onClick={() => changeFilters("isVerified", !filters.isVerified)}
+          />
           <label htmlFor="toggle" className={styles.toggle}></label>
         </div>
-      </div>
+      </CardComponent>
     </div>
   );
 }

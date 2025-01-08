@@ -10,14 +10,12 @@ type ContextValue = {
     key: TKey,
     value: Exclude<FiltersType[TKey], undefined>,
   ) => void;
-  removeFilter: <TKey extends keyof FiltersType>(key: TKey) => void;
   clearAllFilters: () => void;
 };
 
 export const FilterContext = createContext<ContextValue>({
   filters: {},
   changeFilters: () => {},
-  removeFilter: () => {},
   clearAllFilters: () => {},
 });
 
@@ -33,22 +31,12 @@ export default function FilterProvider({ children }: Props) {
     setFilters({ ...filters, [key]: value });
   };
 
-  const removeFilter = <TKey extends keyof FiltersType>(key: TKey) => {
-    setFilters((filters) => {
-      const clone = { ...filters };
-      delete clone[key];
-      return clone;
-    });
-  };
-
   const clearAllFilters = () => {
     setFilters({});
   };
 
   return (
-    <FilterContext.Provider
-      value={{ filters, changeFilters, removeFilter, clearAllFilters }}
-    >
+    <FilterContext.Provider value={{ filters, changeFilters, clearAllFilters }}>
       {children}
     </FilterContext.Provider>
   );

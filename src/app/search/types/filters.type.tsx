@@ -1,3 +1,9 @@
+import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
+
 export type FiltersType = {
-  is_verified?: boolean;
+  [key in keyof typeof MedicalSpecialties]?: boolean;
+} & {
+  sex?: null | "man" | "woman";
+  isVerified?: boolean;
+  ordering?: "rate" | "alpha";
 };

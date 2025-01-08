@@ -1,67 +1,54 @@
-"use client";
-
-import { useContext, useMemo } from "react";
-
-import Image, { ImageProps } from "next/image";
-
 import clsx from "clsx";
 
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
 import MingcuteStarFill from "@/icon/MingcuteStarFill";
 import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
 
-import { FilterContext } from "@/app/search/providers/filters.provider";
+import CardComponent from "@/components/card/card.component";
+
+import { Doctor } from "@/app/search/types/doctor.type";
 
 import styles from "./results.module.css";
 
 type Props = {
-  doctors: {
-    key: number;
-    image: ImageProps;
-    name: string;
-    category: string;
-    address: string;
-    nearestTime: string;
-    rating: number;
-    verify: boolean;
-  }[];
+  doctors: Doctor[];
 };
 
 export default function ResultsComponent({ doctors }: Props) {
-  const { filters } = useContext(FilterContext);
-
-  const isActive = useMemo(() => {
-    if (filters.is_verified && 1) {
-      return true;
-    }
-    return false;
-  }, [filters, 1]);
-
   return (
     <ul className={styles.resultList}>
       {doctors.map((item) => (
-        <li key={item.key}>
-          <div>
-            <div className={clsx(styles.image, item.verify && styles.verify)}>
-              <Image {...item.image} />
-              <MingcuteCheckFill />
+        <li key={item.id}>
+          <CardComponent className={styles.box}>
+            <div>
+              <div
+                className={clsx(styles.image, item.isVerified && styles.verify)}
+              >
+                <img
+                  src={`https://cdn.paziresh24.com${item.image}`}
+                  alt="عکس پروفایل دکتر"
+                  width={150}
+                  height={150}
+                />
+                <MingcuteCheckFill />
+              </div>
+              <div className={styles.info}>
+                <b className={styles.title}>دکتر {item.name}</b>
+                <p className={styles.category}>{item.brief}</p>
+                <p className={styles.address}>
+                  <MingcuteLocationLine /> {item.address}
+                </p>
+                <p className={styles.time}>
+                  اولین نوبت: <b>{item.firstAvailableAppointment}</b>
+                </p>
+              </div>
+              <div className={styles.star}>
+                <MingcuteStarFill />
+                <p>{item.averageRating}</p>
+              </div>
             </div>
-            <div className={styles.info}>
-              <b className={styles.title}>دکتر {item.name}</b>
-              <p className={styles.category}>{item.category}</p>
-              <p className={styles.address}>
-                <MingcuteLocationLine /> {item.address}
-              </p>
-              <p className={styles.time}>
-                اولین نوبت: <b>{item.nearestTime}</b>
-              </p>
-            </div>
-            <div className={styles.star}>
-              <MingcuteStarFill />
-              <p>{item.rating}</p>
-            </div>
-          </div>
-          <button>دریافت نوبت</button>
+            <button>دریافت نوبت</button>
+          </CardComponent>
         </li>
       ))}
     </ul>

@@ -6,20 +6,22 @@ import clsx from "clsx";
 
 import CardComponent from "@/components/card/card.component";
 
-import { MedicalSpecialties } from "@/app/search/types/medicalSpecialties.enum";
+import { MedicalSpecialtiesEnum } from "@/app/search/enums/medicalSpecialties.enum";
+import { GenderEnum } from "@/app/search/enums/gender.enum";
+
 import { FiltersType } from "@/app/search/types/filters.type";
 
 import { FilterContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./filters.module.css";
 
-const entries = Object.entries(MedicalSpecialties);
+const medicalSpecialties = Object.entries(MedicalSpecialtiesEnum);
 
 export default function FiltersComponents() {
   const { filters, changeFilters, clearAllFilters } = useContext(FilterContext);
 
-  const isMan = filters.sex === "man";
-  const isWoman = filters.sex === "woman";
+  const isMan = filters.gender === GenderEnum.MAN;
+  const isWoman = filters.gender === GenderEnum.WOMAN;
   const isVerified = filters.isVerified || false;
 
   return (
@@ -30,7 +32,7 @@ export default function FiltersComponents() {
       <CardComponent className={styles.box}>
         <b>تخصص</b>
         <ul>
-          {entries.map(([key, value]) => (
+          {medicalSpecialties.map(([key, value]) => (
             <li key={key}>
               <button
                 className={clsx(
@@ -58,7 +60,7 @@ export default function FiltersComponents() {
               name="gender"
               value="man"
               checked={isMan}
-              onClick={() => changeFilters("sex", "man")}
+              onClick={() => changeFilters("gender", GenderEnum.MAN)}
             />
             آقا
           </label>
@@ -68,7 +70,7 @@ export default function FiltersComponents() {
               name="gender"
               value="woman"
               checked={isWoman}
-              onClick={() => changeFilters("sex", "woman")}
+              onClick={() => changeFilters("gender", GenderEnum.WOMAN)}
             />
             خانم
           </label>

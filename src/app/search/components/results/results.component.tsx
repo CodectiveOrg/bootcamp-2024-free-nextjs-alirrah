@@ -19,15 +19,18 @@ export default function ResultsComponent() {
 
   return (
     <ul className={styles.resultList}>
-      {filteredItems.map((item) => (
-        <li key={item.id}>
+      {filteredItems.map((doctor) => (
+        <li key={doctor.id}>
           <CardComponent className={styles.box}>
             <div>
               <div
-                className={clsx(styles.image, item.isVerified && styles.verify)}
+                className={clsx(
+                  styles.image,
+                  doctor.isVerified && styles.verify,
+                )}
               >
                 <img
-                  src={`https://cdn.paziresh24.com${item.image}`}
+                  src={`https://cdn.paziresh24.com${doctor.image}`}
                   alt="عکس پروفایل دکتر"
                   width={150}
                   height={150}
@@ -35,18 +38,20 @@ export default function ResultsComponent() {
                 <MingcuteCheckFill />
               </div>
               <div className={styles.info}>
-                <b className={styles.title}>دکتر {item.name}</b>
-                <p className={styles.category}>{item.brief}</p>
+                <b className={styles.title}>
+                  {doctor.gender} دکتر {doctor.name}
+                </b>
+                <p className={styles.category}>{doctor.brief}</p>
                 <p className={styles.address}>
-                  <MingcuteLocationLine /> {item.address}
+                  <MingcuteLocationLine /> {doctor.address}
                 </p>
                 <p className={styles.time}>
-                  اولین نوبت: <b>{item.firstAvailableAppointment}</b>
+                  اولین نوبت: <b>{doctor.firstAvailableAppointment}</b>
                 </p>
               </div>
               <div className={styles.star}>
                 <MingcuteStarFill />
-                <p>{item.averageRating}</p>
+                <p>{doctor.averageRating}</p>
               </div>
             </div>
             <button>دریافت نوبت</button>

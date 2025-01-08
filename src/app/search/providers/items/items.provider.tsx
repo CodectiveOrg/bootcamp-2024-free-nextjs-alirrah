@@ -3,14 +3,19 @@
 import {
   createContext,
   PropsWithChildren,
+  useCallback,
   useContext,
   useEffect,
   useState,
 } from "react";
 
-import { FilterContext } from "@/app/search/providers/filters/filters.provider";
+import { MedicalSpecialtiesEnum } from "@/app/search/enums/medicalSpecialties.enum";
+import { GenderEnum } from "@/app/search/enums/gender.enum";
 
 import { DoctorType } from "@/app/search/types/doctor.type";
+import { FiltersType } from "@/app/search/types/filters.type";
+
+import { FilterContext } from "@/app/search/providers/filters/filters.provider";
 
 type ContextValue = {
   filteredItems: DoctorType[];
@@ -27,17 +32,42 @@ type Props = PropsWithChildren & {
 export default function ItemsProvider({ children, items }: Props) {
   const { filters } = useContext(FilterContext);
 
-  const [filteredItems, setFilteredItems] = useState<DoctorType[]>(items);
+  const [filteredItems, setFilteredItems] = useState<DoctorType[]>([]);
+
+  const isShow = useCallback(
+    (doctor: DoctorType) => {
+      if (
+        filters.gender &&
+        (filters.gender === GenderEnum.MAN || GenderEnum.WOMAN) &&
+        doctor.gender !== filters.gender
+      ) {
+        return false;
+      }
+      if (filters.isVerified && !doctor.isVerified) {
+        return false;
+      }
+      const entries = Object.entries(MedicalSpecialtiesEnum);
+      let isBriefMatch = false;
+      entries.forEach(([key, value]) => {
+        if (filters[key as keyof FiltersType]) {
+          isBriefMatch = isBriefMatch || value === doctor.brief;
+        }
+      });
+      return isBriefMatch;
+    },
+    [filters],
+  );
 
   useEffect(() => {
-    let newItems: DoctorType[] = [];
-    for (let index = 0; index < filteredItems.length; index++) {
-      if (filters.sex && filteredItems[index].sex === filters.sex) {
-        newItems.push(filteredItems[index]);
+    const newItems = items.filter(isShow);
+    newItems.sort((a, b) => {
+      if (filters.ordering === "rate") {
+        return b.averageRating - a.averageRating;
       }
-    }
+      return a.name.localeCompare(b.name);
+    });
     setFilteredItems(newItems);
-  }, [filters]);
+  }, [filters, isShow, items]);
 
   return (
     <ItemsContext.Provider value={{ filteredItems }}>

@@ -22,7 +22,7 @@
     inline-size: 100%;
     block-size: 0.15rem;
 
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-middle-blue);
   }
 
   .row {

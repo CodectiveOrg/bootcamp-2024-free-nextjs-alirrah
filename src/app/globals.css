@@ -13,7 +13,10 @@
 
   --color-gold: hsl(32, 83%, 55%);
 
-  --border-radius-middle: 0.875rem;
+  --shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+
+  --border-radius-middle: 0.75rem;
   --border-radius-small: 0.5rem;
 
   --full-width: 75rem;
@@ -29,6 +32,12 @@
 
   margin: 0;
   padding: 0;
+}
+
+html {
+  color-scheme: light;
+  accent-color: var(--color-middle-blue);
+  caret-color: var(--color-middle-blue);
 }
 
 input,

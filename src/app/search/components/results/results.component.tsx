@@ -51,7 +51,7 @@ export default function ResultsComponent() {
               </div>
               <div className={styles.star}>
                 <MingcuteStarFill />
-                <p>{doctor.averageRating}</p>
+                <p>{Math.round(doctor.averageRating * 100) / 100}</p>
               </div>
             </div>
             <button>دریافت نوبت</button>

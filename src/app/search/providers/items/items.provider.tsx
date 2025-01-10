@@ -9,13 +9,9 @@ import {
   useState,
 } from "react";
 
-import { MedicalSpecialtiesEnum } from "@/app/search/enums/medicalSpecialties.enum";
-import { GenderEnum } from "@/app/search/enums/gender.enum";
+import { DoctorType } from "@/types/doctor.type";
 
-import { DoctorType } from "@/app/search/types/doctor.type";
-import { FiltersType } from "@/app/search/types/filters.type";
-
-import { FilterContext } from "@/app/search/providers/filters/filters.provider";
+import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 type ContextValue = {
   filteredItems: DoctorType[];
@@ -30,30 +26,21 @@ type Props = PropsWithChildren & {
 };
 
 export default function ItemsProvider({ children, items }: Props) {
-  const { filters } = useContext(FilterContext);
+  const { filters } = useContext(FiltersContext);
 
   const [filteredItems, setFilteredItems] = useState<DoctorType[]>([]);
 
   const isShow = useCallback(
-    (doctor: DoctorType) => {
-      if (
-        filters.gender &&
-        (filters.gender === GenderEnum.MAN || GenderEnum.WOMAN) &&
-        doctor.gender !== filters.gender
-      ) {
-        return false;
+    (doctor: DoctorType): boolean => {
+      let result =
+        doesDoctorInclude(doctor, filters.query) &&
+        doesInclude(doctor.brief, filters.brief) &&
+        doesInclude(doctor.gender, filters.gender);
+
+      if (filters.isVerified) {
+        result = result && doctor.isVerified;
       }
-      if (filters.isVerified && !doctor.isVerified) {
-        return false;
-      }
-      const entries = Object.entries(MedicalSpecialtiesEnum);
-      let isBriefMatch = false;
-      entries.forEach(([key, value]) => {
-        if (filters[key as keyof FiltersType]) {
-          isBriefMatch = isBriefMatch || value === doctor.brief;
-        }
-      });
-      return isBriefMatch;
+      return result;
     },
     [filters],
   );
@@ -74,4 +61,28 @@ export default function ItemsProvider({ children, items }: Props) {
       {children}
     </ItemsContext.Provider>
   );
+}
+
+function doesDoctorInclude(doctor: DoctorType, query?: string): boolean {
+  if (!query) {
+    return true;
+  }
+
+  return doesSomeInclude([doctor.name, doctor.brief, doctor.address], query);
+}
+
+function doesSomeInclude(items: string[], query?: string): boolean {
+  if (!query) {
+    return true;
+  }
+
+  return items.some((item) => doesInclude(item, query));
+}
+
+function doesInclude(item: string, query?: string): boolean {
+  if (!query) {
+    return true;
+  }
+
+  return item.toLowerCase().includes(query.toLowerCase());
 }

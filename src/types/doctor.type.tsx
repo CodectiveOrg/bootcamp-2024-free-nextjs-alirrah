@@ -1,5 +1,5 @@
-import { GenderEnum } from "@/app/search/enums/gender.enum";
-import { MedicalSpecialtiesEnum } from "@/app/search/enums/medicalSpecialties.enum";
+import { GenderEnum } from "@/enums/gender.enum";
+import { MedicalSpecialtiesEnum } from "@/enums/medicalSpecialties.enum";
 
 export type DoctorType = {
   id: number;

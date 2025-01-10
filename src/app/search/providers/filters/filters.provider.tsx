@@ -1,43 +1,34 @@
 "use client";
 
-import { createContext, PropsWithChildren, useState } from "react";
+import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
 
-import { FiltersType } from "@/app/search/types/filters.type";
+import {
+  FiltersAction,
+  filtersReducer,
+} from "@/app/search/reducers/filters.reducer";
 
-type ContextValue = {
+import { FiltersType } from "@/types/filters.type";
+
+type Value = {
   filters: FiltersType;
-  changeFilters: <TKey extends keyof FiltersType>(
-    key: TKey,
-    value: Exclude<FiltersType[TKey], undefined>,
-  ) => void;
-  clearAllFilters: () => void;
+  dispatchFilters: Dispatch<FiltersAction>;
 };
 
-export const FilterContext = createContext<ContextValue>({
+export const FiltersContext = createContext<Value>({
   filters: {},
-  changeFilters: () => {},
-  clearAllFilters: () => {},
+  dispatchFilters: () => {},
 });
 
-type Props = PropsWithChildren;
+type Props = PropsWithChildren & {
+  defaultFilters: FiltersType;
+};
 
-export default function FilterProvider({ children }: Props) {
-  const [filters, setFilters] = useState<FiltersType>({});
-
-  const changeFilters = <TKey extends keyof FiltersType>(
-    key: TKey,
-    value: Exclude<FiltersType[TKey], undefined>,
-  ) => {
-    setFilters({ ...filters, [key]: value });
-  };
-
-  const clearAllFilters = () => {
-    setFilters({});
-  };
+export default function FiltersProvider({ children, defaultFilters }: Props) {
+  const [filters, dispatchFilters] = useReducer(filtersReducer, defaultFilters);
 
   return (
-    <FilterContext.Provider value={{ filters, changeFilters, clearAllFilters }}>
+    <FiltersContext.Provider value={{ filters, dispatchFilters }}>
       {children}
-    </FilterContext.Provider>
+    </FiltersContext.Provider>
   );
 }

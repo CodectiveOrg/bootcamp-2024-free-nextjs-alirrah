@@ -10,12 +10,18 @@
   border: 1px solid var(--color-middle-blue);
   border-radius: 999rem;
 
+  transition: var(--animation-duration-fast) ease-in-out;
+  transition-property: border-color;
+
   .prefix {
     display: grid;
     align-items: center;
 
     font-size: var(--fz-600);
     color: var(--color-middle-blue);
+
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: color;
   }
 
   input {
@@ -56,7 +62,8 @@
 
       cursor: pointer;
 
-      transition: var(--animation-duration-fast);
+      transition: var(--animation-duration-fast) ease-in-out;
+      transition-property: color;
 
       svg {
         font-size: 1.5em;
@@ -69,10 +76,10 @@
   }
 
   &:focus-within {
-    border-color: var(--color-middle-blue);
+    border-color: var(--color-dark-blue);
 
     .prefix {
-      color: var(--color-middle-blue);
+      color: var(--color-dark-blue);
     }
   }
 }

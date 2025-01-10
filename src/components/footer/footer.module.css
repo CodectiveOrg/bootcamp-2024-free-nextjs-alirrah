@@ -42,6 +42,13 @@
       svg {
         font-size: var(--fz-600);
         color: var(--color-middle-blue);
+
+        transition: var(--animation-duration-fast) ease-in-out;
+        transition-property: color;
+
+        &:hover {
+          color: var(--color-dark-blue);
+        }
       }
     }
   }

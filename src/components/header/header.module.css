@@ -39,13 +39,14 @@
 
       font-weight: 700;
 
+      transition: var(--animation-duration-fast) ease-in-out;
+      transition-property: background-color, color;
+
       cursor: pointer;
 
       &:hover {
         background-color: var(--color-middle-blue);
         color: var(--color-white);
-
-        transition: var(--animation-duration-fast);
       }
     }
   }

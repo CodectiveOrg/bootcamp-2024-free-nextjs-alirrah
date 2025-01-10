@@ -17,12 +17,13 @@
 
     color: var(--color-red);
 
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color, color;
+
     &:hover {
       background-color: var(--color-red);
 
       color: var(--color-white);
-
-      transition: 0.15s;
     }
   }
 
@@ -53,14 +54,15 @@
 
           cursor: pointer;
 
+          transition: var(--animation-duration-fast) ease-in-out;
+          transition-property: background-color;
+
           &.active {
             background-color: var(--color-middle-grey);
           }
 
           &:hover {
             background-color: var(--color-dark-grey);
-
-            transition: background-color 0.25s;
           }
         }
       }
@@ -99,7 +101,8 @@
 
         border-radius: var(--border-radius-middle);
 
-        transition: background-color 0.3s;
+        transition: var(--animation-duration-fast) ease-in-out;
+        transition-property: background-color;
       }
 
       .toggle::after {

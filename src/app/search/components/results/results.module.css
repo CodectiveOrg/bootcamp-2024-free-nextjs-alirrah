@@ -101,7 +101,8 @@
 
       cursor: pointer;
 
-      transition: background-color var(--animation-duration-fast);
+      transition: var(--animation-duration-fast) ease-in-out;
+      transition-property: background-color;
 
       &:hover {
         background-color: var(--color-dark-blue);

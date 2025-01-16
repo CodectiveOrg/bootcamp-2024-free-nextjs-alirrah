@@ -1,10 +1,11 @@
-import { MedicalSpecialtiesEnum } from "@/enums/medicalSpecialties.enum";
+import { ExpertiseEnum } from "@/enums/expertise.enum";
 import { GenderEnum } from "@/enums/gender.enum";
+import { OrderingEnum } from "@/enums/ordering.enum";
 
 export type FiltersType = {
   query?: string;
-  brief?: MedicalSpecialtiesEnum;
+  expertise?: ExpertiseEnum;
   gender?: GenderEnum;
   isVerified?: boolean;
-  ordering?: "rate" | "alpha";
+  ordering?: OrderingEnum;
 };

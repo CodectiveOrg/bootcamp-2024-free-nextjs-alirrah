@@ -10,6 +10,10 @@ import FilterComponents from "@/app/search/components/filters/filters.component"
 import OrderingComponent from "@/app/search/components/ordering/ordering.component";
 import ResultsComponent from "@/app/search/components/results/results.component";
 
+import { ExpertiseEnum } from "@/enums/expertise.enum";
+import { GenderEnum } from "@/enums/gender.enum";
+import { OrderingEnum } from "@/enums/ordering.enum";
+
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import ItemsProvider from "@/app/search/providers/items/items.provider";
 
@@ -43,11 +47,46 @@ export default async function Page({
 }
 
 function generateDefaultFilters(searchParams: SearchParams): FiltersType {
-  const { query } = searchParams;
+  const { query, expertise, gender, isVerified, ordering } = searchParams;
 
-  if (Array.isArray(query)) {
-    return { query: query[0] };
+  const normalizedExpertise = normalizeFilter(expertise);
+  const normalizedGender = normalizeFilter(gender);
+  const normalizedOrdering = normalizeFilter(ordering);
+  const isVerifiedBoolean = normalizeFilter(isVerified) === "true";
+
+  if (normalizedExpertise && isNotValid(normalizedExpertise, ExpertiseEnum)) {
+    throw new Error(`Invalid expertise: ${normalizedExpertise}`);
   }
 
-  return { query: query };
+  if (normalizedGender && isNotValid(normalizedGender, GenderEnum)) {
+    throw new Error(`Invalid gender: ${normalizedGender}`);
+  }
+
+  if (normalizedOrdering && isNotValid(normalizedOrdering, OrderingEnum)) {
+    throw new Error(`Invalid ordering: ${normalizedOrdering}`);
+  }
+
+  return {
+    query: normalizeFilter(query),
+    expertise: normalizedExpertise as ExpertiseEnum | undefined,
+    gender: normalizedGender as GenderEnum | undefined,
+    isVerified: isVerifiedBoolean,
+    ordering: normalizedOrdering as OrderingEnum | undefined,
+  };
+}
+
+function normalizeFilter(
+  value: string | string[] | undefined,
+): string | undefined {
+  if (Array.isArray(value)) {
+    return value[0];
+  }
+  return value;
+}
+
+function isNotValid(
+  value: string,
+  collection: typeof ExpertiseEnum | typeof GenderEnum | typeof OrderingEnum,
+): boolean {
+  return !Object.values(collection).includes(value);
 }

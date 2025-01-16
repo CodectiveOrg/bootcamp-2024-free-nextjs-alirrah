@@ -41,7 +41,7 @@ export default function ResultsComponent() {
                 <b className={styles.title}>
                   {doctor.gender} دکتر {doctor.name}
                 </b>
-                <p className={styles.category}>{doctor.brief}</p>
+                <p className={styles.category}>{doctor.expertise}</p>
                 <p className={styles.address}>
                   <MingcuteLocationLine /> {doctor.address}
                 </p>

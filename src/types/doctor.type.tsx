@@ -1,5 +1,5 @@
+import { ExpertiseEnum } from "@/enums/expertise.enum";
 import { GenderEnum } from "@/enums/gender.enum";
-import { MedicalSpecialtiesEnum } from "@/enums/medicalSpecialties.enum";
 
 export type DoctorType = {
   id: number;
@@ -10,5 +10,5 @@ export type DoctorType = {
   averageRating: number;
   address: string;
   firstAvailableAppointment: string;
-  brief: MedicalSpecialtiesEnum;
+  expertise: ExpertiseEnum;
 };

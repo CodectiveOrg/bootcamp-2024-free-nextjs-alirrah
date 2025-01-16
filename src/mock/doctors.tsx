@@ -1,4 +1,4 @@
-import { MedicalSpecialtiesEnum } from "@/enums/medicalSpecialties.enum";
+import { ExpertiseEnum } from "@/enums/expertise.enum";
 import { DoctorType } from "@/types/doctor.type";
 import { GenderEnum } from "@/enums/gender.enum";
 
@@ -14,7 +14,7 @@ export const doctors: DoctorType[] = [
     address:
       "خرم آباد,خرم آباد، بین چهارراه بانک و میدان شهدا،ساختمان پزشکان مانا طبقه چهارم",
     firstAvailableAppointment: "کمتر از یک ساعت دیگر",
-    brief: MedicalSpecialtiesEnum.BONES_AND_JOINTS,
+    expertise: ExpertiseEnum.BONES_AND_JOINTS,
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const doctors: DoctorType[] = [
     address:
       "اردبیل,اردبیل، اول خیابان والی، خیابان شهیدان نوعی اقدم، نرسیده به بیمارستان امام خمینی، جنب داروخانه دکترنصیرپور",
     firstAvailableAppointment: "16 دی 11 صبح",
-    brief: MedicalSpecialtiesEnum.GASTROENTEROLOGY,
+    expertise: ExpertiseEnum.GASTROENTEROLOGY,
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const doctors: DoctorType[] = [
     averageRating: 5,
     address: "جهرم,خیابان ۲۲ بهمن ،جنب بانک مسکن ،ساختمان حکیم ،طبقه سوم",
     firstAvailableAppointment: "15 دی 4 عصر",
-    brief: MedicalSpecialtiesEnum.BONES_AND_JOINTS,
+    expertise: ExpertiseEnum.BONES_AND_JOINTS,
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ export const doctors: DoctorType[] = [
     address:
       "اصفهان,شهرک ولی عصر .بیمارستان فوق تخصصی میلاد کلینیک  اطفال ونوزادان",
     firstAvailableAppointment: "13 اسفند 5 عصر",
-    brief: MedicalSpecialtiesEnum.WOMEN_AND_CHILD_BIRTH,
+    expertise: ExpertiseEnum.WOMEN_AND_CHILD_BIRTH,
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ export const doctors: DoctorType[] = [
     address:
       "کلینیک خیام بیمارستان تخصصی و فوق تخصصی حکیم|نیشابور,میدان بسیج، ابتدای جاده باغرود، مرکز اموزشی پژوهشی و درمانی حکیم (درمانگاه طب سنتی ; آدرس: کلینیک امام علی : بلوار جمهوری - بین جمهوری 6و 8)",
     firstAvailableAppointment: "16 دی 8 صبح",
-    brief: MedicalSpecialtiesEnum.OPHTHALMOLOGY,
+    expertise: ExpertiseEnum.OPHTHALMOLOGY,
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const doctors: DoctorType[] = [
     averageRating: 4.4884,
     address: "کلینیک تخصصی و فوق تخصصی کودکان بندرعباس|بندرعباس,گلشهر شمالی",
     firstAvailableAppointment: "20 دی 9 صبح",
-    brief: MedicalSpecialtiesEnum.GASTROENTEROLOGY,
+    expertise: ExpertiseEnum.GASTROENTEROLOGY,
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ export const doctors: DoctorType[] = [
     averageRating: 4.95,
     address: "شیراز,خیابان زند، روبرو هتل پارس، ساختمان صدر زاده، طبقه دوم",
     firstAvailableAppointment: "15 دی 1 عصر",
-    brief: MedicalSpecialtiesEnum.OPHTHALMOLOGY,
+    expertise: ExpertiseEnum.OPHTHALMOLOGY,
   },
   {
     id: 8,
@@ -100,7 +100,7 @@ export const doctors: DoctorType[] = [
     address:
       "قائن,قائن، خیابان دکتر امین زاده، تقاطع جانبازان، ساختمان پزشکان امام جواد",
     firstAvailableAppointment: "19 دی 7 عصر",
-    brief: MedicalSpecialtiesEnum.WOMEN_AND_CHILD_BIRTH,
+    expertise: ExpertiseEnum.WOMEN_AND_CHILD_BIRTH,
   },
   {
     id: 9,
@@ -112,7 +112,7 @@ export const doctors: DoctorType[] = [
     averageRating: 4.93,
     address: "تهران,تهران، خ شهرارا،خیابان بیستم،پلاک۸",
     firstAvailableAppointment: "16 دی 4 عصر",
-    brief: MedicalSpecialtiesEnum.OPHTHALMOLOGY,
+    expertise: ExpertiseEnum.OPHTHALMOLOGY,
   },
   {
     id: 10,
@@ -125,7 +125,7 @@ export const doctors: DoctorType[] = [
     address:
       "مشهد,حد فاصل بین چهارراه دکتری و میدان امام رضا(ع)، ابن سینا 3،ساختمان اویدنس، طبقه 2، واحد 8",
     firstAvailableAppointment: "فردا 9 صبح",
-    brief: MedicalSpecialtiesEnum.OPHTHALMOLOGY,
+    expertise: ExpertiseEnum.OPHTHALMOLOGY,
   },
   {
     id: 11,
@@ -138,7 +138,7 @@ export const doctors: DoctorType[] = [
     address:
       "بیمارستان شهید بهشتی کاشان|کاشان,بلوار قطب راوندی-مجتمع بیمارستانی شهید بهشتی-کد پستی 87159/81151",
     firstAvailableAppointment: "17 دی 5 عصر",
-    brief: MedicalSpecialtiesEnum.WOMEN_AND_CHILD_BIRTH,
+    expertise: ExpertiseEnum.WOMEN_AND_CHILD_BIRTH,
   },
   {
     id: 12,
@@ -151,7 +151,7 @@ export const doctors: DoctorType[] = [
     address:
       "تهران,تهران، خیابان دکتر قریب، بعد نصرت سر کوچه سوسن ساختمان شباهنگ واحد۳۴",
     firstAvailableAppointment: "کمتر از پنج ساعت دیگر",
-    brief: MedicalSpecialtiesEnum.GASTROENTEROLOGY,
+    expertise: ExpertiseEnum.GASTROENTEROLOGY,
   },
   {
     id: 13,
@@ -163,7 +163,7 @@ export const doctors: DoctorType[] = [
     averageRating: 4.86,
     address: "همدان,همدان، بلوار زینبیه، سبدبافان، کلینیک امید",
     firstAvailableAppointment: "کمتر از پنج ساعت دیگر",
-    brief: MedicalSpecialtiesEnum.BONES_AND_JOINTS,
+    expertise: ExpertiseEnum.BONES_AND_JOINTS,
   },
   {
     id: 14,
@@ -176,7 +176,7 @@ export const doctors: DoctorType[] = [
     address:
       "مشهد,مشهد، رازی غربی، میدان امام رضا ساختمان پزشکان رازی طبقه ۴. واحد ۴۰۲ صبحها بججز سه شنبه ها و مطب شماره ۲ خیابان کوهسنگی .بین کوهسنگی ۵ و ۷ . جنب فروشگاه سون. پلاک ۱۶۳ عصره بجز پنجشنبه ها",
     firstAvailableAppointment: "کمتر از یک ساعت دیگر",
-    brief: MedicalSpecialtiesEnum.WOMEN_AND_CHILD_BIRTH,
+    expertise: ExpertiseEnum.WOMEN_AND_CHILD_BIRTH,
   },
   {
     id: 15,
@@ -189,7 +189,7 @@ export const doctors: DoctorType[] = [
     address:
       "کلینیک تخصصی و فوق تخصصی امید(صبح ،ایت اله روحانی)|بابل,خیابان گنج افروز ضلع غربی بیمارستان روحانی، کلینیک تخصصی و فوق تخصصی امید",
     firstAvailableAppointment: "کمتر از پنج ساعت دیگر",
-    brief: MedicalSpecialtiesEnum.KIDNEY_AND_URINARY_TRACT,
+    expertise: ExpertiseEnum.KIDNEY_AND_URINARY_TRACT,
   },
   {
     id: 16,
@@ -202,7 +202,7 @@ export const doctors: DoctorType[] = [
     address:
       "سمنان,سمنان، ولیعصر، تقاطع شریعتی، رو به روی بستنی شاد ساختمان باران طبقه 6 زنگ 13",
     firstAvailableAppointment: "15 دی 4 عصر",
-    brief: MedicalSpecialtiesEnum.KIDNEY_AND_URINARY_TRACT,
+    expertise: ExpertiseEnum.KIDNEY_AND_URINARY_TRACT,
   },
   {
     id: 17,
@@ -215,7 +215,7 @@ export const doctors: DoctorType[] = [
     address:
       "کلینیک تخصصی وفوق تخصصی شهید فتاحی|کرمانشاه,کرمانشاه.بلوار شهید بهشتی رو بروی ساختمان شماره 1 دانشگاه علوم پزشکی. ابتدای ورودی بلوار سی متری دوم",
     firstAvailableAppointment: "16 دی 4 عصر",
-    brief: MedicalSpecialtiesEnum.WOMEN_AND_CHILD_BIRTH,
+    expertise: ExpertiseEnum.WOMEN_AND_CHILD_BIRTH,
   },
   {
     id: 18,
@@ -228,7 +228,7 @@ export const doctors: DoctorType[] = [
     address:
       "بیمارستان فوق تخصصی چشم پزشکی نگاه|تهران,تقاطع خیابان شریعتی و بزرگراه همت، خیابان کتابی",
     firstAvailableAppointment: "9 فروردین 5 عصر",
-    brief: MedicalSpecialtiesEnum.KIDNEY_AND_URINARY_TRACT,
+    expertise: ExpertiseEnum.KIDNEY_AND_URINARY_TRACT,
   },
   {
     id: 19,
@@ -241,7 +241,7 @@ export const doctors: DoctorType[] = [
     address:
       "کلینیک بیمارستان نیکان|تهران,اقدسیه، ابتدای بلوار ارتش، ورودی اراج، خیابان 22 بهمن، شماره 6",
     firstAvailableAppointment: "18 دی 6 عصر",
-    brief: MedicalSpecialtiesEnum.GASTROENTEROLOGY,
+    expertise: ExpertiseEnum.GASTROENTEROLOGY,
   },
   {
     id: 20,
@@ -253,6 +253,6 @@ export const doctors: DoctorType[] = [
     address:
       "بیمارستان شهید هاشمی نژاد تهران|تهران,خیابان ولی عصر (عج)، بالاتر از میدان ونک، کوچه شهید والی نژاد",
     firstAvailableAppointment: "14 اردیبهشت 12 عصر",
-    brief: MedicalSpecialtiesEnum.OPHTHALMOLOGY,
+    expertise: ExpertiseEnum.OPHTHALMOLOGY,
   },
 ];

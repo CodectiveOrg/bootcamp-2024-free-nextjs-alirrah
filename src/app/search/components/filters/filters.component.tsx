@@ -6,14 +6,16 @@ import clsx from "clsx";
 
 import CardComponent from "@/components/card/card.component";
 
-import { MedicalSpecialtiesEnum } from "@/enums/medicalSpecialties.enum";
+import { ExpertiseEnum } from "@/enums/expertise.enum";
 import { GenderEnum } from "@/enums/gender.enum";
+
+import { FiltersType } from "@/types/filters.type";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./filters.module.css";
 
-const medicalSpecialties = Object.entries(MedicalSpecialtiesEnum);
+const expertise = Object.entries(ExpertiseEnum);
 
 export default function FiltersComponents() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
@@ -24,15 +26,33 @@ export default function FiltersComponents() {
   const isSetFilter =
     !!filters.query ||
     filters.isVerified ||
-    !!filters.brief ||
+    !!filters.expertise ||
     !!filters.gender;
+
+  const onChangeHandler = (
+    type: "removed_all" | "updated_filter",
+    key?: keyof FiltersType,
+    value?: string | boolean,
+  ) => {
+    if (type === "removed_all") {
+      dispatchFilters({
+        type: type,
+      });
+    } else {
+      dispatchFilters({
+        type: type,
+        key: key!,
+        value: value!,
+      });
+    }
+  };
 
   return (
     <div className={styles.filters}>
       {isSetFilter ? (
         <button
           className={styles["delete-btn"]}
-          onClick={() => dispatchFilters({ type: "removed_all" })}
+          onClick={() => onChangeHandler("removed_all")}
         >
           حذف فیلتر
         </button>
@@ -40,16 +60,12 @@ export default function FiltersComponents() {
       <CardComponent className={styles.box}>
         <b>تخصص</b>
         <ul>
-          {medicalSpecialties.map(([key, value]) => (
+          {expertise.map(([key, value]) => (
             <li key={key}>
               <button
-                className={clsx(filters.brief === value && styles.active)}
+                className={clsx(filters.expertise === value && styles.active)}
                 onClick={() =>
-                  dispatchFilters({
-                    type: "updated_filter",
-                    key: "brief",
-                    value: value,
-                  })
+                  onChangeHandler("updated_filter", "expertise", value)
                 }
               >
                 {value}
@@ -68,11 +84,7 @@ export default function FiltersComponents() {
               value="man"
               checked={isMan}
               onChange={() =>
-                dispatchFilters({
-                  type: "updated_filter",
-                  key: "gender",
-                  value: GenderEnum.MAN,
-                })
+                onChangeHandler("updated_filter", "gender", GenderEnum.MAN)
               }
             />
             آقا
@@ -84,11 +96,7 @@ export default function FiltersComponents() {
               value="woman"
               checked={isWoman}
               onChange={() =>
-                dispatchFilters({
-                  type: "updated_filter",
-                  key: "gender",
-                  value: GenderEnum.WOMAN,
-                })
+                onChangeHandler("updated_filter", "gender", GenderEnum.WOMAN)
               }
             />
             خانم
@@ -103,11 +111,7 @@ export default function FiltersComponents() {
             checked={isVerified}
             className={styles["hide-me"]}
             onChange={() =>
-              dispatchFilters({
-                type: "updated_filter",
-                key: "isVerified",
-                value: !filters.isVerified,
-              })
+              onChangeHandler("updated_filter", "isVerified", !isVerified)
             }
           />
           <label htmlFor="toggle" className={styles.toggle}></label>

@@ -44,7 +44,33 @@ export default function GlobalSearchBoxComponent() {
     const filterQuery = filters.query || "";
     setQuery(filterQuery);
 
-    const href = filterQuery ? `/search/?query=${filterQuery}` : "/search";
+    const filterExpertise = filters.expertise;
+    const filterGender = filters.gender;
+    const filterIsVerified = filters.isVerified;
+    const filterOrdering = filters.ordering;
+
+    const searchParams = [];
+
+    if (filterQuery) {
+      searchParams.push(`query=${encodeURIComponent(filterQuery)}`);
+    }
+    if (filterExpertise) {
+      searchParams.push(`expertise=${encodeURIComponent(filterExpertise)}`);
+    }
+    if (filterGender) {
+      searchParams.push(`gender=${encodeURIComponent(filterGender)}`);
+    }
+    if (filterIsVerified) {
+      searchParams.push(`isVerified=${encodeURIComponent(filterIsVerified)}`);
+    }
+    if (filterOrdering) {
+      searchParams.push(`ordering=${encodeURIComponent(filterOrdering)}`);
+    }
+
+    const searchParam =
+      searchParams.length > 0 ? `${searchParams.join("&")}` : "";
+
+    const href = searchParam ? `/search/?${searchParam}` : "/search";
     router.replace(href);
   }, [filters, pathname, router]);
 

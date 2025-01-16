@@ -10,7 +10,7 @@ import { ItemsContext } from "@/app/search/providers/items/items.provider";
 import styles from "./ordering.module.css";
 
 export default function OrderingComponent() {
-  const { dispatchFilters } = useContext(FiltersContext);
+  const { filters, dispatchFilters } = useContext(FiltersContext);
   const { filteredItems } = useContext(ItemsContext);
 
   return (
@@ -20,7 +20,8 @@ export default function OrderingComponent() {
         <select
           name="ordering"
           id="ordering"
-          onClick={(event) =>
+          value={filters.ordering}
+          onChange={(event) =>
             dispatchFilters({
               type: "updated_filter",
               key: "ordering",

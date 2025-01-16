@@ -34,7 +34,7 @@ export default function ItemsProvider({ children, items }: Props) {
     (doctor: DoctorType): boolean => {
       let result =
         doesDoctorInclude(doctor, filters.query) &&
-        doesInclude(doctor.brief, filters.brief) &&
+        doesInclude(doctor.expertise, filters.expertise) &&
         doesInclude(doctor.gender, filters.gender);
 
       if (filters.isVerified) {
@@ -68,7 +68,10 @@ function doesDoctorInclude(doctor: DoctorType, query?: string): boolean {
     return true;
   }
 
-  return doesSomeInclude([doctor.name, doctor.brief, doctor.address], query);
+  return doesSomeInclude(
+    [doctor.name, doctor.expertise, doctor.address],
+    query,
+  );
 }
 
 function doesSomeInclude(items: string[], query?: string): boolean {

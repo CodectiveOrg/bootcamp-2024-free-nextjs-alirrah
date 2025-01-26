@@ -10,12 +10,14 @@ import MingcuteLocationFill from "@/icon/MingcuteLocationFill";
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./globalSearchBox.module.css";
+import { OrderContext } from "@/app/search/providers/order/order.provider";
 
 export default function GlobalSearchBoxComponent() {
   const router = useRouter();
   const pathname = usePathname();
 
   const { filters, dispatchFilters } = useContext(FiltersContext);
+  const { ordering } = useContext(OrderContext);
 
   const [query, setQuery] = useState<string>("");
 
@@ -47,9 +49,9 @@ export default function GlobalSearchBoxComponent() {
     const filterExpertise = filters.expertise;
     const filterGender = filters.gender;
     const filterIsVerified = filters.isVerified;
-    const filterOrdering = filters.ordering;
+    const filterOrdering = ordering;
 
-    const searchParams = [];
+    const searchParams: string[] = [];
 
     if (filterQuery) {
       searchParams.push(`query=${encodeURIComponent(filterQuery)}`);
@@ -72,7 +74,7 @@ export default function GlobalSearchBoxComponent() {
 
     const href = searchParam ? `/search/?${searchParam}` : "/search";
     router.replace(href);
-  }, [filters, pathname, router]);
+  }, [filters, pathname, router, ordering]);
 
   return (
     <form className={styles["global-search-box"]} onSubmit={formSubmitHandler}>
@@ -88,7 +90,7 @@ export default function GlobalSearchBoxComponent() {
       />
       <div className={styles.divider}></div>
       <div className={styles.suffix}>
-        <button type="submit">
+        <button>
           <MingcuteLocationFill />
           همه شهرها
         </button>

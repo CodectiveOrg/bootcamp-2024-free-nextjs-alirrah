@@ -1,69 +1,64 @@
-import { ReactElement } from "react";
-
 import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchBox.component";
 
 import { doctors } from "@/mock/doctors";
 
 import { FiltersType } from "@/types/filters.type";
 
-import FilterComponents from "@/app/search/components/filters/filters.component";
-import OrderingComponent from "@/app/search/components/ordering/ordering.component";
-import ResultsComponent from "@/app/search/components/results/results.component";
-
 import { ExpertiseEnum } from "@/enums/expertise.enum";
 import { GenderEnum } from "@/enums/gender.enum";
 import { OrderingEnum } from "@/enums/ordering.enum";
 
 import FiltersProvider from "@/app/search/providers/filters/filters.provider";
-import ItemsProvider from "@/app/search/providers/items/items.provider";
+import OrderProvider from "@/app/search/providers/order/order.provider";
+import DoctorsProvider from "@/app/search/providers/doctors/doctors.provider";
+
+import SidebarFiltersComponent from "@/app/search/components/sidebarFilters/sidebarFilters.component";
+import TopBarComponent from "@/app/search/components/topBar/topBar.component";
+import ResultsComponent from "@/app/search/components/results/results.component";
 
 import styles from "./page.module.css";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
 type Props = {
-  searchParams: Promise<SearchParams>;
+  searchParams: SearchParams;
 };
 
-export default async function Page({
-  searchParams,
-}: Props): Promise<ReactElement> {
-  const defaultFilters = generateDefaultFilters(await searchParams);
+export default function Page({ searchParams }: Props) {
+  const defaultFilters = generateDefaultFilters(searchParams);
+  const defaultOrdering = generateDefaultOrdering(searchParams);
 
   return (
     <div className={styles["search-page"]}>
       <FiltersProvider defaultFilters={defaultFilters}>
-        <GlobalSearchBoxComponent />
-        <div className={styles.results}>
-          <FilterComponents />
-          <ItemsProvider items={doctors}>
-            <OrderingComponent />
-            <ResultsComponent />
-          </ItemsProvider>
-        </div>
+        <OrderProvider defaultOrdering={defaultOrdering}>
+          <GlobalSearchBoxComponent />
+          <div className={styles.results}>
+            <SidebarFiltersComponent className={styles["filters"]} />
+            <DoctorsProvider items={doctors}>
+              <TopBarComponent className={styles["ordering"]} />
+              <ResultsComponent className={styles["results-list"]} />
+            </DoctorsProvider>
+          </div>
+        </OrderProvider>
       </FiltersProvider>
     </div>
   );
 }
 
 function generateDefaultFilters(searchParams: SearchParams): FiltersType {
-  const { query, expertise, gender, isVerified, ordering } = searchParams;
+  const { query, expertise, gender, isVerified } = searchParams;
 
-  const normalizedExpertise = normalizeFilter(expertise);
-  const normalizedGender = normalizeFilter(gender);
-  const normalizedOrdering = normalizeFilter(ordering);
+  let normalizedExpertise = normalizeFilter(expertise);
+  let normalizedGender = normalizeFilter(gender);
   const isVerifiedBoolean = normalizeFilter(isVerified) === "true";
 
   if (normalizedExpertise && isNotValid(normalizedExpertise, ExpertiseEnum)) {
-    throw new Error(`Invalid expertise: ${normalizedExpertise}`);
+    normalizedExpertise = "";
   }
 
   if (normalizedGender && isNotValid(normalizedGender, GenderEnum)) {
-    throw new Error(`Invalid gender: ${normalizedGender}`);
-  }
-
-  if (normalizedOrdering && isNotValid(normalizedOrdering, OrderingEnum)) {
-    throw new Error(`Invalid ordering: ${normalizedOrdering}`);
+    normalizedGender = "";
   }
 
   return {
@@ -71,8 +66,22 @@ function generateDefaultFilters(searchParams: SearchParams): FiltersType {
     expertise: normalizedExpertise as ExpertiseEnum | undefined,
     gender: normalizedGender as GenderEnum | undefined,
     isVerified: isVerifiedBoolean,
-    ordering: normalizedOrdering as OrderingEnum | undefined,
   };
+}
+
+function generateDefaultOrdering(searchParams: SearchParams): OrderingEnum {
+  const { ordering } = searchParams;
+
+  let normalizedOrdering = normalizeFilter(ordering);
+
+  if (
+    !normalizedOrdering ||
+    (normalizedOrdering && isNotValid(normalizedOrdering, OrderingEnum))
+  ) {
+    normalizedOrdering = OrderingEnum.ALPHABETICALLY;
+  }
+
+  return normalizedOrdering as OrderingEnum;
 }
 
 function normalizeFilter(

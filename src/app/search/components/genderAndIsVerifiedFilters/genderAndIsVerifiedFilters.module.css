@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .gender-box {
+    display: flex;
+    flex-direction: column;
+
+    input[type="radio"] {
+      margin-inline-end: 0.25rem;
+    }
+  }
+
+  hr {
+    border-color: var(--color-secondary);
+  }
+
+  .selection-box {
+    display: flex;
+    justify-content: space-between;
+  }
+}

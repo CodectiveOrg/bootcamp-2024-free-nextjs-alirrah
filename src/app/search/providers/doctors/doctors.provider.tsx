@@ -11,55 +11,58 @@ import {
 
 import { DoctorType } from "@/types/doctor.type";
 
+import { OrderingEnum } from "@/enums/ordering.enum";
+
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+import { OrderContext } from "@/app/search/providers/order/order.provider";
 
 type ContextValue = {
-  filteredItems: DoctorType[];
+  filteredDoctors: DoctorType[];
 };
 
-export const ItemsContext = createContext<ContextValue>({
-  filteredItems: [],
+export const DoctorsContext = createContext<ContextValue>({
+  filteredDoctors: [],
 });
 
 type Props = PropsWithChildren & {
   items: DoctorType[];
 };
 
-export default function ItemsProvider({ children, items }: Props) {
+export default function DoctorsProvider({ children, items }: Props) {
   const { filters } = useContext(FiltersContext);
+  const { ordering } = useContext(OrderContext);
 
-  const [filteredItems, setFilteredItems] = useState<DoctorType[]>([]);
+  const [filteredDoctors, setFilteredDoctors] = useState<DoctorType[]>([]);
 
-  const isShow = useCallback(
+  const isVisible = useCallback(
     (doctor: DoctorType): boolean => {
-      let result =
+      return (
         doesDoctorInclude(doctor, filters.query) &&
         doesInclude(doctor.expertise, filters.expertise) &&
-        doesInclude(doctor.gender, filters.gender);
-
-      if (filters.isVerified) {
-        result = result && doctor.isVerified;
-      }
-      return result;
+        doesInclude(doctor.gender, filters.gender) &&
+        ((doctor.isVerified && !!filters.isVerified) || !filters.isVerified)
+      );
     },
     [filters],
   );
 
   useEffect(() => {
-    const newItems = items.filter(isShow);
-    newItems.sort((a, b) => {
-      if (filters.ordering === "rate") {
-        return b.averageRating - a.averageRating;
+    const filteredDoctors = items.filter(isVisible);
+
+    filteredDoctors.sort((firstDoctor, secondDoctor) => {
+      if (ordering === OrderingEnum.RATE) {
+        return secondDoctor.averageRating - firstDoctor.averageRating;
       }
-      return a.name.localeCompare(b.name);
+      return firstDoctor.name.localeCompare(secondDoctor.name);
     });
-    setFilteredItems(newItems);
-  }, [filters, isShow, items]);
+
+    setFilteredDoctors(filteredDoctors);
+  }, [filters, isVisible, items, ordering]);
 
   return (
-    <ItemsContext.Provider value={{ filteredItems }}>
+    <DoctorsContext.Provider value={{ filteredDoctors: filteredDoctors }}>
       {children}
-    </ItemsContext.Provider>
+    </DoctorsContext.Provider>
   );
 }
 

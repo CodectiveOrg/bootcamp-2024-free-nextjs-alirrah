@@ -1,27 +1,18 @@
-.ordering {
-  grid-area: ordering;
-
+.card {
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
 
-  .box {
-    display: flex;
-    gap: 1rem;
+  border-radius: var(--border-radius-small);
 
-    background-color: var(--color-light-grey);
+  padding: 0.5rem 1rem;
 
-    border-radius: var(--border-radius-small);
+  select {
+    background-color: transparent;
 
-    padding: 0.5rem 1rem;
+    border: none;
 
-    select {
-      background-color: transparent;
-
-      border: none;
-
-      &:focus-visible {
-        outline: none;
-      }
+    &:focus-visible {
+      outline: none;
     }
   }
 }

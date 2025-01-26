@@ -2,44 +2,56 @@
 
 import { useContext } from "react";
 
+import Link from "next/link";
+import Image from "next/image";
+
 import clsx from "clsx";
 
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
 import MingcuteStarFill from "@/icon/MingcuteStarFill";
+
 import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
 
 import CardComponent from "@/components/card/card.component";
 
-import { ItemsContext } from "@/app/search/providers/items/items.provider";
+import { GenderEnum } from "@/enums/gender.enum";
 
+import { DoctorsContext } from "@/app/search/providers/doctors/doctors.provider";
 import styles from "./results.module.css";
 
-export default function ResultsComponent() {
-  const { filteredItems } = useContext(ItemsContext);
+type Props = {
+  className?: string;
+};
+
+export default function ResultsComponent({ className }: Props) {
+  const { filteredDoctors } = useContext(DoctorsContext);
 
   return (
-    <ul className={styles.resultList}>
-      {filteredItems.map((doctor) => (
+    <ul className={clsx(styles.results, className)}>
+      {filteredDoctors.map((doctor) => (
         <li key={doctor.id}>
           <CardComponent className={styles.box}>
-            <div>
+            <div className={styles["doctor-card"]}>
               <div
                 className={clsx(
                   styles.image,
                   doctor.isVerified && styles.verify,
                 )}
               >
-                <img
+                <Image
                   src={`https://cdn.paziresh24.com${doctor.image}`}
                   alt="عکس پروفایل دکتر"
                   width={150}
                   height={150}
                 />
-                <MingcuteCheckFill />
+                {doctor.isVerified && <MingcuteCheckFill />}
               </div>
               <div className={styles.info}>
                 <b className={styles.title}>
-                  {doctor.gender} دکتر {doctor.name}
+                  {doctor.gender === GenderEnum.MAN
+                    ? `${GenderEnum.MAN}ی `
+                    : `${GenderEnum.WOMAN} `}
+                  دکتر {doctor.name}
                 </b>
                 <p className={styles.category}>{doctor.expertise}</p>
                 <p className={styles.address}>
@@ -54,7 +66,7 @@ export default function ResultsComponent() {
                 <p>{Math.round(doctor.averageRating * 100) / 100}</p>
               </div>
             </div>
-            <button>دریافت نوبت</button>
+            <Link href={``}>دریافت نوبت</Link>
           </CardComponent>
         </li>
       ))}

@@ -43,7 +43,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 4,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.WOMAN,
     name: "اعظم قهساره اردستانی",
     image: "/getImage/p24/search-women/noimage.png?size=150",
     isVerified: true,
@@ -68,7 +68,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 6,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.WOMAN,
     name: "نادیا پرور",
     image: "/getImage/p24/search-women/noimage.png?size=150",
     isVerified: false,
@@ -129,7 +129,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 11,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.MAN,
     name: "سیدرامین مدنی",
     image:
       "/getImage/p24/search-men/24148401234ae124eb8346f40c370eb4.jpg?size=150",
@@ -180,7 +180,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 15,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.MAN,
     name: "مهران شکری",
     image:
       "/getImage/p24/search-men/9c13b879760e5474ea6b64f1485b148f.jpg?size=150",
@@ -219,7 +219,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 18,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.MAN,
     name: "منصور مظفری",
     image:
       "/getImage/p24/search-men/92b9b61a759f116fe5712f80d1749cb4.jpg?size=150",
@@ -232,7 +232,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 19,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.MAN,
     name: "مهراد فخرالدینی",
     image:
       "/getImage/p24/search-men/b847b2a26f6f0151d22b7ea396044550.jpg?size=150",
@@ -245,7 +245,7 @@ export const doctors: DoctorType[] = [
   },
   {
     id: 20,
-    gender: GenderEnum.UNKNOWN,
+    gender: GenderEnum.MAN,
     name: "جلال امینی",
     image: "/getImage/p24/search-men/noimage.png?size=150",
     isVerified: false,

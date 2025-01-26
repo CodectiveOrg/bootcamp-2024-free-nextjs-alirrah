@@ -1,28 +1,28 @@
 :root {
-  --color-dark-blue: hsl(214, 98%, 40%);
-  --color-middle-blue: hsl(214, 94%, 52%);
-  --color-light-blue: hsl(200, 92%, 95%);
+  --color-primary: hsl(214deg, 94%, 52%);
+  --color-primary-darker: hsl(214deg, 98%, 40%);
+  --color-primary-fade: hsl(200deg, 92%, 97.5%);
+  --color-primary-opposite: hsl(0, 0%, 100%);
 
-  --color-dark-grey: rgb(153, 153, 153);
-  --color-middle-grey: hsl(0, 0%, 80%);
-  --color-light-grey: hsl(0, 0%, 96%);
+  --color-secondary: hsl(0, 0%, 80%);
+  --color-secondary-darker: hsl(0, 0%, 60%);
+  --color-secondary-lighter: hsl(0, 0%, 96%);
 
-  --color-white: hsl(0, 0%, 100%);
+  --color-danger: hsl(0, 79%, 52%);
 
-  --color-red: hsl(0, 79%, 52%);
+  --color-star: hsl(32deg, 83%, 55%);
 
-  --color-gold: hsl(32, 83%, 55%);
-
-  --shadow: hsla(240, 35%, 30%, 0.15) 0 2px 5px 0,
+  --shadow: hsla(240deg, 35%, 30%, 0.15) 0 2px 5px 0,
     hsla(0, 0%, 0%, 0.05) 0 1px 1px 0;
 
-  --border-radius-middle: 0.75rem;
+  --border-radius-medium: 0.75rem;
   --border-radius-small: 0.5rem;
 
   --full-width: 75rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 2rem) / 2);
 
   --animation-duration-fast: 0.1s;
+  --animation-duration-normal: 0.3s;
 }
 
 *,
@@ -36,8 +36,8 @@
 
 html {
   color-scheme: light;
-  accent-color: var(--color-middle-blue);
-  caret-color: var(--color-middle-blue);
+  accent-color: var(--color-primary);
+  caret-color: var(--color-primary);
 }
 
 input,
@@ -61,6 +61,17 @@ a {
   color: inherit;
 
   text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+
+  border: none;
+  border-radius: var(--border-radius-medium);
+
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
 }
 
 body {

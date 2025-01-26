@@ -2,12 +2,12 @@
 
 import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
 
+import { FiltersType } from "@/types/filters.type";
+
 import {
   FiltersAction,
   filtersReducer,
-} from "@/app/search/reducers/filters.reducer";
-
-import { FiltersType } from "@/types/filters.type";
+} from "@/app/search/reducers/filters/filters.reducer";
 
 type Value = {
   filters: FiltersType;

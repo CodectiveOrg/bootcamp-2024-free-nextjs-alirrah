@@ -30,7 +30,7 @@ export default function HeaderComponent({ menu }: { menu: MenuItemType[] }) {
           </ul>
         </nav>
 
-        <button className={styles["booking-btn"]}>رزرو نوبت</button>
+        <button className={styles.booking}>رزرو نوبت</button>
       </div>
     </header>
   );

@@ -1,4 +1,4 @@
 export enum OrderingEnum {
-  ALPHA = "alpha",
+  ALPHABETICALLY = "alphabetically",
   RATE = "rate",
 }

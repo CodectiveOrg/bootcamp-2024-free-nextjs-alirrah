@@ -7,13 +7,13 @@
     display: flex;
     align-items: flex-end;
 
-    > img {
+    img {
       block-size: 2rem;
       inline-size: auto;
     }
 
-    > p {
-      color: var(--color-middle-blue);
+    p {
+      color: var(--color-primary);
       font-weight: 700;
     }
   }
@@ -22,7 +22,7 @@
     inline-size: 100%;
     block-size: 0.15rem;
 
-    background-color: var(--color-middle-blue);
+    background-color: var(--color-primary);
   }
 
   .row {
@@ -34,20 +34,19 @@
 
     padding-inline: 1rem;
 
-    > ul {
+    ul {
       display: flex;
       align-items: center;
       gap: 1rem;
 
       svg {
         font-size: var(--fz-600);
-        color: var(--color-middle-blue);
+        color: var(--color-primary);
 
-        transition: var(--animation-duration-fast) ease-in-out;
-        transition-property: color;
+        transition: color var(--animation-duration-fast) ease-in-out;
 
         &:hover {
-          color: var(--color-dark-blue);
+          color: var(--color-primary-darker);
         }
       }
     }

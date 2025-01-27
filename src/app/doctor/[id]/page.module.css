@@ -1,0 +1,20 @@
+.doctor-id-page {
+  display: flex;
+  gap: 1rem;
+
+  padding-block-end: 2rem;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  > section {
+    flex: 2;
+  }
+
+  > aside {
+    flex: 1;
+  }
+}

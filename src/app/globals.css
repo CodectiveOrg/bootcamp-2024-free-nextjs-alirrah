@@ -12,9 +12,12 @@
 
   --color-star: hsl(32deg, 83%, 55%);
 
+  --color-success: hsl(142deg, 76%, 36%);
+
   --shadow: hsla(240deg, 35%, 30%, 0.15) 0 2px 5px 0,
     hsla(0, 0%, 0%, 0.05) 0 1px 1px 0;
 
+  --border-radius-large: 1rem;
   --border-radius-medium: 0.75rem;
   --border-radius-small: 0.5rem;
 

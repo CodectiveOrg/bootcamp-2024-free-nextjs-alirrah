@@ -4,6 +4,7 @@ import { doctors } from "@/mock/doctors";
 
 import InfoComponent from "@/app/doctor/[id]/components/info/info.component";
 import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.component";
+import ActivityComponent from "@/app/doctor/[id]/components/activity/activity.component";
 
 import styles from "./page.module.css";
 
@@ -30,6 +31,12 @@ export default function Page({ params }: Props) {
           doctorMedicalSystemNumber={doctor.medicalSystemNumber}
         />
         <AboutMeComponent aboutMe={doctor.aboutMe} />
+        <ActivityComponent
+          doctorName={doctor.name}
+          monthActivity={doctor.activity.month}
+          yearActivity={doctor.activity.year}
+          activeConsultNumber={doctor.activeConsultNumber}
+        />
       </section>
       <aside></aside>
     </div>

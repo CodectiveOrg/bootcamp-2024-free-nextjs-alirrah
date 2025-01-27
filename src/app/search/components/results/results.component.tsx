@@ -50,7 +50,7 @@ export default function ResultsComponent({ className }: Props) {
                 </b>
                 <p className={styles.category}>{doctor.expertise}</p>
                 <p className={styles.address}>
-                  <MingcuteLocationLine /> {doctor.address}
+                  <MingcuteLocationLine /> {doctor.addresses?.[0].location}
                 </p>
                 <p className={styles.time}>
                   اولین نوبت: <b>{doctor.firstAvailableAppointment}</b>

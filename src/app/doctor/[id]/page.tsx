@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { doctors } from "@/mock/doctors";
 
 import InfoComponent from "@/app/doctor/[id]/components/info/info.component";
+import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.component";
 
 import styles from "./page.module.css";
 
@@ -28,6 +29,7 @@ export default function Page({ params }: Props) {
           doctorTotalPeopleRate={doctor.totalPeopleRate}
           doctorMedicalSystemNumber={doctor.medicalSystemNumber}
         />
+        <AboutMeComponent aboutMe={doctor.aboutMe} />
       </section>
       <aside></aside>
     </div>

@@ -8,9 +8,9 @@ import MingcuteSearchFill from "@/icon/MingcuteSearchFill";
 import MingcuteLocationFill from "@/icon/MingcuteLocationFill";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
+import { OrderContext } from "@/app/search/providers/order/order.provider";
 
 import styles from "./globalSearchBox.module.css";
-import { OrderContext } from "@/app/search/providers/order/order.provider";
 
 export default function GlobalSearchBoxComponent() {
   const router = useRouter();

@@ -52,7 +52,7 @@ export default function GenderAndIsVerifiedFiltersComponent() {
           خانم
         </label>
       </div>
-      <hr />
+      <div className={styles.divider}></div>
       <div className={styles["selection-box"]}>
         <b>منتخب نوبت آنلاین</b>
         <ToggleComponent

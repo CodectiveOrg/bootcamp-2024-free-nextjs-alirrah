@@ -60,7 +60,7 @@ export default function DoctorsProvider({ children, items }: Props) {
   }, [filters, isVisible, items, ordering]);
 
   return (
-    <DoctorsContext.Provider value={{ filteredDoctors: filteredDoctors }}>
+    <DoctorsContext.Provider value={{ filteredDoctors }}>
       {children}
     </DoctorsContext.Provider>
   );

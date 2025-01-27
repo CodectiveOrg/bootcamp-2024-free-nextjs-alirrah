@@ -7,16 +7,16 @@ import Image from "next/image";
 
 import clsx from "clsx";
 
+import CardComponent from "@/components/card/card.component";
+
 import MingcuteLocationLine from "@/icon/MingcuteLocationLine";
 import MingcuteStarFill from "@/icon/MingcuteStarFill";
-
 import MingcuteCheckFill from "@/icon/MingcuteCheckFill";
-
-import CardComponent from "@/components/card/card.component";
 
 import { GenderEnum } from "@/enums/gender.enum";
 
 import { DoctorsContext } from "@/app/search/providers/doctors/doctors.provider";
+
 import styles from "./results.module.css";
 
 type Props = {
@@ -32,12 +32,7 @@ export default function ResultsComponent({ className }: Props) {
         <li key={doctor.id}>
           <CardComponent className={styles.box}>
             <div className={styles["doctor-card"]}>
-              <div
-                className={clsx(
-                  styles.image,
-                  doctor.isVerified && styles.verify,
-                )}
-              >
+              <div className={styles.image}>
                 <Image
                   src={`https://cdn.paziresh24.com${doctor.image}`}
                   alt="عکس پروفایل دکتر"
@@ -66,7 +61,7 @@ export default function ResultsComponent({ className }: Props) {
                 <p>{Math.round(doctor.averageRating * 100) / 100}</p>
               </div>
             </div>
-            <Link href={``}>دریافت نوبت</Link>
+            <Link href="#">دریافت نوبت</Link>
           </CardComponent>
         </li>
       ))}

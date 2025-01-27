@@ -12,7 +12,7 @@ type Props = {
 
 export default function Error({ reset }: Props) {
   return (
-    <div className={styles["error"]}>
+    <div className={styles.error}>
       <div className={styles.writings}>
         <div className={styles["status-code"]}>بدبخت شدیم!</div>
         <h1>یک خطای غیرمنتظره رخ داده است.</h1>

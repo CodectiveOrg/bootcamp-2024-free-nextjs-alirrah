@@ -1,4 +1,5 @@
 import CardComponent from "@/components/card/card.component";
+import ButtonComponent from "@/components/button/button.component";
 
 import MingcuteArrowsLeftLine from "@/icon/MingcuteArrowsLeftLine";
 import MingcuteWifiLine from "@/icon/MingcuteWifiLine";
@@ -36,10 +37,10 @@ export default function OnlineVisitComponent({
             تا <b>3 روز</b> می‌توانید هر سوالی دارید از پزشک بپرسید
           </li>
         </ul>
-        <button>
+        <ButtonComponent>
           <p>شروع ویزیت با {doctorName}</p>
           <MingcuteArrowsLeftLine />
-        </button>
+        </ButtonComponent>
       </CardComponent>
     )
   );

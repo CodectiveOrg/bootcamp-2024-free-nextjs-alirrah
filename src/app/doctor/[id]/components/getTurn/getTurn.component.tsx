@@ -1,4 +1,5 @@
 import CardComponent from "@/components/card/card.component";
+import ButtonComponent from "@/components/button/button.component";
 
 import MingcuteWalkFill from "@/icon/MingcuteWalkFill";
 import MingcuteArrowsLeftLine from "@/icon/MingcuteArrowsLeftLine";
@@ -19,10 +20,10 @@ export default function GetTurnComponent() {
       <ul>
         <li>امکان دریافت زودترین نوبت</li>
       </ul>
-      <button>
+      <ButtonComponent>
         <p>دریافت نوبت</p>
         <MingcuteArrowsLeftLine />
-      </button>
+      </ButtonComponent>
     </CardComponent>
   );
 }

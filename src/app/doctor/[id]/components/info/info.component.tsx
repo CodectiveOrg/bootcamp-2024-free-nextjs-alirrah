@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import CardComponent from "@/components/card/card.component";
+import ButtonComponent from "@/components/button/button.component";
 
 import MingcuteShareLine from "@/icon/MingcuteShareLine";
 
@@ -35,10 +36,10 @@ export default function InfoComponent({
 
   return (
     <CardComponent className={styles.info}>
-      <button className={styles["share-btn"]} onClick={handleCopy}>
+      <ButtonComponent className={styles.share} onClick={handleCopy}>
         <MingcuteShareLine />
         <p>اشتراک گذاری</p>
-      </button>
+      </ButtonComponent>
       <CardComponent className={styles["info-box"]}>
         <Image
           src={`https://cdn.paziresh24.com${doctorImage}`}

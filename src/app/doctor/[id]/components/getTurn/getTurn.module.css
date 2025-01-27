@@ -4,7 +4,7 @@
     align-items: center;
     gap: 0.15rem;
 
-    svg {
+    > svg {
       font-size: 1.5rem;
     }
   }
@@ -24,18 +24,9 @@
 
     background-color: var(--color-primary);
 
-    padding: 0.5rem 1rem;
-
-    border: none;
-
-    border-radius: var(--border-radius-small);
-
     color: var(--color-primary-opposite);
 
-    cursor: pointer;
-
-    transition: var(--animation-duration-fast) ease-in-out;
-    transition-property: background-color;
+    transition: background-color var(--animation-duration-fast) ease-in-out;
 
     &:hover {
       background-color: var(--color-primary-darker);

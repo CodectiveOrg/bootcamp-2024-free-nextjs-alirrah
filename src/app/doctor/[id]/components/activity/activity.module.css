@@ -1,5 +1,5 @@
 .activity {
-  .box {
+  .card {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -11,7 +11,7 @@
 
       background-color: var(--color-primary-opposite);
 
-      svg {
+      > svg {
         font-size: 1.2rem;
       }
     }

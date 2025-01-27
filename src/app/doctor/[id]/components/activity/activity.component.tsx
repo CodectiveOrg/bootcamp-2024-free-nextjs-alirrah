@@ -22,7 +22,7 @@ export default function ActivityComponent({
     (yearActivity != 0 || monthActivity != 0 || activeConsultNumber != 0) && (
       <div className={styles.activity}>
         <b>فعالیت ها</b>
-        <CardComponent className={styles.box}>
+        <CardComponent className={styles.card}>
           {yearActivity != 0 || monthActivity != 0 ? (
             <CardComponent className={styles["activity-item"]}>
               <MingcuteMedalLine />

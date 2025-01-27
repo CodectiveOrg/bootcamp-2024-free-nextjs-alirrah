@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  ul {
+  > ul {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -12,8 +12,8 @@
 
     overflow: auto;
 
-    li {
-      button {
+    > li {
+      > button {
         inline-size: 100%;
 
         padding-block: 0.25rem;

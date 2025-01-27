@@ -3,7 +3,7 @@
 
   padding: 0.5rem;
 
-  box-shadow: var(--shadow);
-
   border-radius: var(--border-radius-small);
+
+  box-shadow: var(--shadow);
 }

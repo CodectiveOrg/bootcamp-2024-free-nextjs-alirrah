@@ -7,13 +7,17 @@
     display: flex;
     flex-direction: column;
 
-    input[type="radio"] {
-      margin-inline-end: 0.25rem;
+    > label {
+      > input[type="radio"] {
+        margin-inline-end: 0.25rem;
+      }
     }
   }
 
-  hr {
-    border-color: var(--color-secondary);
+  .divider {
+    background-color: var(--color-secondary-darker);
+
+    block-size: 2px;
   }
 
   .selection-box {

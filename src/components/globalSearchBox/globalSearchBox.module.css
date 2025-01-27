@@ -16,13 +16,13 @@
     display: grid;
     align-items: center;
 
-    font-size: var(--fz-600);
     color: var(--color-primary);
+    font-size: var(--fz-600);
 
     transition: color var(--animation-duration-fast) ease-in-out;
   }
 
-  input {
+  > input {
     flex: 1 1 0;
 
     background-color: transparent;
@@ -44,7 +44,7 @@
   }
 
   .suffix {
-    button {
+    > button {
       display: flex;
       align-items: center;
       gap: 0.25rem;
@@ -57,7 +57,7 @@
 
       transition: color var(--animation-duration-fast) ease-in-out;
 
-      svg {
+      > svg {
         font-size: 1.5em;
       }
 
@@ -70,7 +70,7 @@
   &:focus-within {
     border-color: var(--color-primary-darker);
 
-    .prefix {
+    > .prefix {
       color: var(--color-primary-darker);
     }
   }

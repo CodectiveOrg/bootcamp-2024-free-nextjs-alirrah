@@ -13,13 +13,13 @@
 
     border-radius: var(--border-radius-medium);
 
-    nav {
-      ul {
+    > nav {
+      > ul {
         display: flex;
         gap: 2rem;
 
-        li {
-          a {
+        > li {
+          > a {
             &.active {
               color: var(--color-primary);
             }
@@ -31,9 +31,8 @@
     .booking {
       border: 1px solid currentcolor;
 
-      font-weight: 700;
-
       color: var(--color-primary);
+      font-weight: 700;
 
       transition: var(--animation-duration-fast) ease-in-out;
       transition-property: background-color, color;

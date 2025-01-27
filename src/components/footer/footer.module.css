@@ -7,12 +7,12 @@
     display: flex;
     align-items: flex-end;
 
-    img {
+    > img {
       block-size: 2rem;
       inline-size: auto;
     }
 
-    p {
+    > p {
       color: var(--color-primary);
       font-weight: 700;
     }
@@ -34,14 +34,14 @@
 
     padding-inline: 1rem;
 
-    ul {
+    > ul {
       display: flex;
       align-items: center;
       gap: 1rem;
 
       svg {
-        font-size: var(--fz-600);
         color: var(--color-primary);
+        font-size: var(--fz-600);
 
         transition: color var(--animation-duration-fast) ease-in-out;
 

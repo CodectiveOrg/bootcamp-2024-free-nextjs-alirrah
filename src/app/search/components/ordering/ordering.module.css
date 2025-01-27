@@ -6,7 +6,7 @@
 
   padding: 0.5rem 1rem;
 
-  select {
+  > select {
     background-color: transparent;
 
     border: none;

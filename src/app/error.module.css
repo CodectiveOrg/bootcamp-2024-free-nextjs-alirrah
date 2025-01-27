@@ -16,7 +16,7 @@
       font-weight: 700;
     }
 
-    h1 {
+    > h1 {
       margin-block-end: 1rem;
 
       font-size: var(--fz-600);
@@ -29,7 +29,7 @@
     min-block-size: 100%;
     block-size: 0;
 
-    img {
+    > img {
       block-size: 100%;
       inline-size: auto;
     }
@@ -39,14 +39,14 @@
     grid-area: actions;
     grid-column: 1 / -1;
 
-    button {
+    > button {
       background-color: var(--color-primary);
 
       padding-inline: 2rem;
 
+      color: var(--color-primary-opposite);
       font-size: var(--fz-400);
       font-weight: 900;
-      color: var(--color-primary-opposite);
     }
   }
 }

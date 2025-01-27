@@ -16,7 +16,7 @@
       .image {
         position: relative;
 
-        img {
+        > img {
           inline-size: 5rem;
           block-size: 5rem;
 
@@ -24,7 +24,7 @@
           border-radius: 999rem;
         }
 
-        svg {
+        > svg {
           position: absolute;
           inset-block-end: 0.5rem;
           inset-inline-end: 0.5rem;
@@ -35,8 +35,8 @@
 
           border-radius: 999rem;
 
-          font-size: var(--fz-500);
           color: var(--color-primary-opposite);
+          font-size: var(--fz-500);
         }
       }
 
@@ -47,12 +47,12 @@
         justify-content: space-between;
         gap: 0.2rem;
 
-        b.title {
+        .title {
           color: var(--color-primary);
           font-size: var(--fz-500);
         }
 
-        p {
+        > p {
           &.category {
             font-size: var(--fz-300);
           }
@@ -81,7 +81,7 @@
       }
     }
 
-    a {
+    > a {
       inline-size: 100%;
 
       background-color: var(--color-primary);

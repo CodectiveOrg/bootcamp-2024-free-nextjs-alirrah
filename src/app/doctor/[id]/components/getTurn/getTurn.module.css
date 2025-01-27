@@ -1,0 +1,44 @@
+.get-turn {
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  ul {
+    padding-block: 0.5rem;
+
+    font-size: var(--fz-300);
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    inline-size: 100%;
+
+    background-color: var(--color-primary);
+
+    padding: 0.5rem 1rem;
+
+    border: none;
+
+    border-radius: var(--border-radius-small);
+
+    color: var(--color-primary-opposite);
+
+    cursor: pointer;
+
+    transition: var(--animation-duration-fast) ease-in-out;
+    transition-property: background-color;
+
+    &:hover {
+      background-color: var(--color-primary-darker);
+    }
+  }
+}

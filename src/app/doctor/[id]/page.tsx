@@ -7,6 +7,7 @@ import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.compo
 import ActivityComponent from "@/app/doctor/[id]/components/activity/activity.component";
 import OnlineVisitComponent from "@/app/doctor/[id]/components/onlineVisit/onlineVisit.component";
 import GetTurnComponent from "@/app/doctor/[id]/components/getTurn/getTurn.component";
+import AddressComponent from "@/app/doctor/[id]/components/address/address.component";
 
 import styles from "./page.module.css";
 
@@ -46,6 +47,7 @@ export default function Page({ params }: Props) {
           onlineVisitPrice={doctor.onlineVisitPrice}
         />
         <GetTurnComponent />
+        <AddressComponent doctorAddresses={doctor.addresses} />
       </aside>
     </div>
   );

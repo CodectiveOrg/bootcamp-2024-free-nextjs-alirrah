@@ -1,0 +1,55 @@
+.address {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      background-color: var(--color-primary-opposite);
+
+      padding: 0.5rem;
+
+      border-radius: var(--border-radius-small);
+
+      p {
+        font-size: var(--fz-300);
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        background-color: var(--color-primary-opposite);
+
+        padding: 0.25rem;
+
+        border: 1px solid var(--color-primary);
+
+        border-radius: var(--border-radius-small);
+
+        color: var(--color-primary-darker);
+
+        transition: var(--animation-duration-fast) ease-in-out;
+        transition-property: background-color;
+
+        &:hover {
+          background-color: var(--color-primary-fade);
+        }
+
+        svg {
+          font-size: 1.3rem;
+        }
+
+        p {
+          padding-block-start: 0.2rem;
+        }
+      }
+    }
+  }
+}

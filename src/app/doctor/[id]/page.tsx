@@ -5,6 +5,7 @@ import { doctors } from "@/mock/doctors";
 import InfoComponent from "@/app/doctor/[id]/components/info/info.component";
 import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.component";
 import ActivityComponent from "@/app/doctor/[id]/components/activity/activity.component";
+import CommentComponent from "@/app/doctor/[id]/components/comments/comments.component";
 import OnlineVisitComponent from "@/app/doctor/[id]/components/onlineVisit/onlineVisit.component";
 import GetTurnComponent from "@/app/doctor/[id]/components/getTurn/getTurn.component";
 import AddressComponent from "@/app/doctor/[id]/components/address/address.component";
@@ -40,6 +41,7 @@ export default function Page({ params }: Props) {
           yearActivity={doctor.activity.year}
           activeConsultNumber={doctor.activeConsultNumber}
         />
+        <CommentComponent name={doctor.name} />
       </section>
       <aside>
         <OnlineVisitComponent

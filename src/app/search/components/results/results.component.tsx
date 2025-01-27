@@ -30,7 +30,7 @@ export default function ResultsComponent({ className }: Props) {
     <ul className={clsx(styles.results, className)}>
       {filteredDoctors.map((doctor) => (
         <li key={doctor.id}>
-          <CardComponent className={styles.box}>
+          <CardComponent showShadow className={styles.box}>
             <div className={styles["doctor-card"]}>
               <div className={styles.image}>
                 <Image
@@ -61,7 +61,7 @@ export default function ResultsComponent({ className }: Props) {
                 <p>{Math.round(doctor.averageRating * 100) / 100}</p>
               </div>
             </div>
-            <Link href="#">دریافت نوبت</Link>
+            <Link href={`/doctor/${doctor.id}`}>دریافت نوبت</Link>
           </CardComponent>
         </li>
       ))}

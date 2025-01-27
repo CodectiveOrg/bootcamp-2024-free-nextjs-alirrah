@@ -14,7 +14,7 @@ export default function OrderingComponent() {
   const { ordering, dispatchOrder } = useContext(OrderContext);
 
   return (
-    <CardComponent className={styles.card}>
+    <CardComponent showShadow className={styles.card}>
       <label htmlFor="ordering">مرتب سازی براساس:</label>
       <select
         name="ordering"

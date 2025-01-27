@@ -8,10 +8,6 @@
     flex-direction: column;
     gap: 0.25rem;
 
-    max-block-size: 20rem;
-
-    overflow: auto;
-
     > li {
       > button {
         inline-size: 100%;

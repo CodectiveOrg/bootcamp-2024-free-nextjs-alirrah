@@ -19,7 +19,7 @@ export default function ExpertiseFilterComponent() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   return (
-    <CardComponent className={styles.card}>
+    <CardComponent showShadow className={styles.card}>
       <b>تخصص</b>
       <ul>
         {expertise.map(([key, value]) => (

@@ -16,7 +16,7 @@ export default function GenderAndIsVerifiedFiltersComponent() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   return (
-    <CardComponent className={styles.card}>
+    <CardComponent showShadow className={styles.card}>
       <b>جنسیت</b>
       <div className={styles["gender-box"]}>
         <label>

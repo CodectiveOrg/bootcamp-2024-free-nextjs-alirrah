@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import { MenuItemType } from "@/types/menuItem.type";
 
 import styles from "./header.module.css";
@@ -29,7 +31,7 @@ export default function HeaderComponent({ menu }: { menu: MenuItemType[] }) {
             ))}
           </ul>
         </nav>
-        <button className={styles.booking}>رزرو نوبت</button>
+        <ButtonComponent className={styles.booking}>رزرو نوبت</ButtonComponent>
       </div>
     </header>
   );

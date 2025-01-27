@@ -5,6 +5,7 @@ import { useContext, useMemo } from "react";
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./removeAllFiltersButton.module.css";
+import ButtonComponent from "@/components/button/button.component";
 
 export default function RemoveAllFiltersButtonComponent() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
@@ -23,8 +24,8 @@ export default function RemoveAllFiltersButtonComponent() {
   }
 
   return (
-    <button
-      className={styles["remove"]}
+    <ButtonComponent
+      className={styles.remove}
       onClick={() =>
         dispatchFilters({
           type: "removed_all",
@@ -32,6 +33,6 @@ export default function RemoveAllFiltersButtonComponent() {
       }
     >
       حذف تمام فیلترها
-    </button>
+    </ButtonComponent>
   );
 }

@@ -5,6 +5,7 @@ import { useContext } from "react";
 import clsx from "clsx";
 
 import CardComponent from "@/components/card/card.component";
+import ButtonComponent from "@/components/button/button.component";
 
 import { ExpertiseEnum } from "@/enums/expertise.enum";
 
@@ -23,7 +24,7 @@ export default function ExpertiseFilterComponent() {
       <ul>
         {expertise.map(([key, value]) => (
           <li key={key}>
-            <button
+            <ButtonComponent
               className={clsx(filters.expertise === value && styles.active)}
               onClick={() =>
                 dispatchFilters({
@@ -34,7 +35,7 @@ export default function ExpertiseFilterComponent() {
               }
             >
               {value}
-            </button>
+            </ButtonComponent>
           </li>
         ))}
       </ul>

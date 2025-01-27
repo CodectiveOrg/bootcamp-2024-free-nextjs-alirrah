@@ -4,6 +4,8 @@ import { FormEvent, useContext, useEffect, useState } from "react";
 
 import { usePathname, useRouter } from "next/navigation";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import MingcuteSearchFill from "@/icon/MingcuteSearchFill";
 import MingcuteLocationFill from "@/icon/MingcuteLocationFill";
 
@@ -90,10 +92,10 @@ export default function GlobalSearchBoxComponent() {
       />
       <div className={styles.divider}></div>
       <div className={styles.suffix}>
-        <button>
+        <ButtonComponent>
           <MingcuteLocationFill />
           همه شهرها
-        </button>
+        </ButtonComponent>
       </div>
     </form>
   );

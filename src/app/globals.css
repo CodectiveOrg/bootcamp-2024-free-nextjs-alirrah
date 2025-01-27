@@ -63,17 +63,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  background-color: transparent;
-
-  border: none;
-  border-radius: var(--border-radius-medium);
-
-  padding: 0.5rem 1rem;
-
-  cursor: pointer;
-}
-
 body {
   display: grid;
   grid-template-rows: auto 1fr auto auto;

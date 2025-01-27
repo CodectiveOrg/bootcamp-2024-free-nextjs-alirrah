@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import ButtonComponent from "@/components/button/button.component";
+
 import errorImage from "@/assets/illustrations/error.webp";
 
 import styles from "./error.module.css";
@@ -22,7 +24,7 @@ export default function Error({ reset }: Props) {
         <Image src={errorImage} alt="" />
       </div>
       <div className={styles.actions}>
-        <button onClick={reset}>تلاش مجدد</button>
+        <ButtonComponent onClick={reset}>تلاش مجدد</ButtonComponent>
       </div>
     </div>
   );

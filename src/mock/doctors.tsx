@@ -4,7 +4,7 @@ import { GenderEnum } from "@/enums/gender.enum";
 
 export const doctors: DoctorType[] = [
   {
-    id: 1,
+    key: 1,
     gender: GenderEnum.WOMAN,
     name: "پوراندخت جعفری",
     image:
@@ -32,7 +32,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 2,
+    key: 2,
     gender: GenderEnum.MAN,
     name: "مجتبی قدسی",
     image:
@@ -58,7 +58,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 3,
+    key: 3,
     gender: GenderEnum.MAN,
     name: "امیرحسین پورداود",
     image:
@@ -86,7 +86,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 4,
+    key: 4,
     gender: GenderEnum.WOMAN,
     name: "اعظم قهساره اردستانی",
     image: "/getImage/p24/search-women/noimage.png?size=150",
@@ -111,7 +111,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 5,
+    key: 5,
     gender: GenderEnum.MAN,
     name: "رضا پورعلی",
     image:
@@ -154,7 +154,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 6,
+    key: 6,
     gender: GenderEnum.WOMAN,
     name: "نادیا پرور",
     image: "/getImage/p24/search-women/noimage.png?size=150",
@@ -183,7 +183,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 7,
+    key: 7,
     gender: GenderEnum.MAN,
     name: "محمدرضا ادراکی",
     image:
@@ -216,7 +216,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 8,
+    key: 8,
     gender: GenderEnum.MAN,
     name: "محسن رضائی مقدم",
     image:
@@ -245,7 +245,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 9,
+    key: 9,
     gender: GenderEnum.MAN,
     name: "پیمان شاه حسینی",
     image:
@@ -276,7 +276,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 10,
+    key: 10,
     gender: GenderEnum.MAN,
     name: "رضا افتخار",
     image:
@@ -302,7 +302,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 11,
+    key: 11,
     gender: GenderEnum.MAN,
     name: "سیدرامین مدنی",
     image:
@@ -340,7 +340,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 12,
+    key: 12,
     gender: GenderEnum.MAN,
     name: "پژمان روحانی",
     image:
@@ -383,7 +383,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 13,
+    key: 13,
     gender: GenderEnum.MAN,
     name: "عباس ریحانی",
     image:
@@ -429,7 +429,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 14,
+    key: 14,
     gender: GenderEnum.WOMAN,
     name: "نرگس رخش بهار",
     image:
@@ -454,7 +454,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 15,
+    key: 15,
     gender: GenderEnum.MAN,
     name: "مهران شکری",
     image:
@@ -481,7 +481,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 16,
+    key: 16,
     gender: GenderEnum.MAN,
     name: "نوید دانائی",
     image:
@@ -514,7 +514,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 17,
+    key: 17,
     gender: GenderEnum.MAN,
     name: "یوسف رحمانی",
     image:
@@ -554,7 +554,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 18,
+    key: 18,
     gender: GenderEnum.MAN,
     name: "منصور مظفری",
     image:
@@ -593,7 +593,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 19,
+    key: 19,
     gender: GenderEnum.MAN,
     name: "مهراد فخرالدینی",
     image:
@@ -640,7 +640,7 @@ export const doctors: DoctorType[] = [
     ],
   },
   {
-    id: 20,
+    key: 20,
     gender: GenderEnum.MAN,
     name: "جلال امینی",
     image: "/getImage/p24/search-men/noimage.png?size=150",

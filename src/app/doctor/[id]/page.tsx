@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function Page({ params }: Props) {
-  const doctor = doctors.find((doctor) => `${doctor.id}` === params.id);
+  const doctor = doctors.find((doctor) => `${doctor.key}` === params.id);
 
   if (!doctor) {
     return notFound();

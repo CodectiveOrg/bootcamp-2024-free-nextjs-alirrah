@@ -3,7 +3,7 @@ import { GenderEnum } from "@/enums/gender.enum";
 import { AddressType } from "@/types/address.type";
 
 export type DoctorType = {
-  id: number;
+  key: number;
   gender: GenderEnum;
   name: string;
   image: string;

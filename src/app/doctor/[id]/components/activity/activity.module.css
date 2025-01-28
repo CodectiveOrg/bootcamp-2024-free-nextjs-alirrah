@@ -12,7 +12,7 @@
       background-color: var(--color-primary-opposite);
 
       > svg {
-        font-size: 1.2rem;
+        font-size: var(--fz-500);
       }
     }
   }

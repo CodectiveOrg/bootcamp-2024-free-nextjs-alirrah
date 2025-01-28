@@ -43,7 +43,7 @@
         }
 
         > svg {
-          font-size: 1.3rem;
+          font-size: var(--fz-500);
         }
 
         > p {

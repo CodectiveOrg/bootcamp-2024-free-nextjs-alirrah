@@ -14,6 +14,10 @@
 
   --color-success: hsl(142deg, 76%, 36%);
 
+  --color-user-profile-one: rgb(135, 108, 155);
+  --color-user-profile-two: rgb(229, 178, 225);
+  --color-user-profile-three: rgb(132, 147, 230);
+
   --shadow: hsla(240deg, 35%, 30%, 0.15) 0 2px 5px 0,
     hsla(0, 0%, 0%, 0.05) 0 1px 1px 0;
 

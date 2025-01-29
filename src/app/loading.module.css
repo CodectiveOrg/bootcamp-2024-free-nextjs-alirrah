@@ -1,0 +1,39 @@
+.loading {
+  display: grid;
+  place-content: center;
+
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  background-color: hsl(from var(--color-primary-opposite) h s l / 0.5);
+  backdrop-filter: blur(3px);
+
+  svg {
+    polyline {
+      fill: none;
+
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      &.beat {
+        stroke: var(--color-primary);
+        stroke-dasharray: 48, 144;
+        stroke-dashoffset: 192;
+
+        animation: beat_animation var(--animation-duration-slow) linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes beat_animation {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

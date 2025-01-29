@@ -1,13 +1,19 @@
-import { comments } from "@/mock/comments";
+"use client";
+
+import { useContext } from "react";
 
 import MingcuteUserFill from "@/icon/MingcuteUserFill";
+
+import { CommentsContext } from "@/app/doctor/[id]/providers/comments/comments.provider";
 
 import styles from "./commentsResult.module.css";
 
 export default function CommentsResultComponent() {
+  const { filteredComments } = useContext(CommentsContext);
+
   return (
     <ul className={styles["comments-result"]}>
-      {comments.map((comment) => (
+      {filteredComments.map((comment) => (
         <>
           <li key={comment.key}>
             <div>

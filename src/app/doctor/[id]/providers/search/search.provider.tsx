@@ -15,13 +15,13 @@ type Value = {
 };
 
 export const SearchContext = createContext<Value>({
-  search: {},
+  search: { ordering: "timeNewest" },
   dispatchSearch: () => {},
 });
 
 export default function SearchProvider({ children }: PropsWithChildren) {
   const initial: SearchType = {
-    ordering: "time",
+    ordering: "timeNewest",
   };
   const [search, dispatchSearch] = useReducer(searchReducer, initial);
 

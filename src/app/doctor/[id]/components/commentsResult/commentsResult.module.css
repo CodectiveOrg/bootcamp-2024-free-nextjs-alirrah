@@ -59,6 +59,8 @@
 
     .description {
       font-size: var(--fz-300);
+
+      white-space: pre-line;
     }
   }
 

@@ -16,8 +16,6 @@
       border-radius: var(--border-radius-small);
 
       > p {
-        text-align: justify;
-
         font-size: var(--fz-300);
       }
 

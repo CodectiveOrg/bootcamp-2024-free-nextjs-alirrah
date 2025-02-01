@@ -7,14 +7,16 @@ type Props = {
 };
 
 export default function AboutMeComponent({ aboutMe }: Props) {
+  if (!aboutMe) {
+    return null;
+  }
+
   return (
-    aboutMe && (
-      <div className={styles["about-me"]}>
-        <b>درباره من</b>
-        <CardComponent>
-          <p>{aboutMe}</p>
-        </CardComponent>
-      </div>
-    )
+    <div className={styles["about-me"]}>
+      <b>درباره من</b>
+      <CardComponent>
+        <p>{aboutMe}</p>
+      </CardComponent>
+    </div>
   );
 }

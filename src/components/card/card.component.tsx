@@ -8,6 +8,8 @@ type Props = {
   className?: string;
   showShadow?: boolean;
   title?: React.ReactNode;
+  outsideTitle?: string;
+  outsideClassName?: string;
 };
 
 export default function CardComponent({
@@ -15,27 +17,32 @@ export default function CardComponent({
   children,
   showShadow,
   title,
+  outsideTitle,
+  outsideClassName,
   ...props
 }: PropsWithChildren<Props>) {
   return (
-    <div
-      className={clsx(
-        styles.card,
-        className,
-        showShadow && styles.shadow,
-        !!title && styles["has-title"],
-      )}
-      {...props}
-    >
-      {!!title ? (
-        <>
-          <div className={styles.title}>{title}</div>
-          <hr />
-          <div className={styles.body}>{children}</div>
-        </>
-      ) : (
-        children
-      )}
+    <div className={outsideClassName}>
+      {outsideTitle && <b>{outsideTitle}</b>}
+      <div
+        className={clsx(
+          styles.card,
+          className,
+          showShadow && styles.shadow,
+          !!title && styles["has-title"],
+        )}
+        {...props}
+      >
+        {!!title ? (
+          <>
+            <div className={styles.title}>{title}</div>
+            <hr />
+            <div className={styles.body}>{children}</div>
+          </>
+        ) : (
+          children
+        )}
+      </div>
     </div>
   );
 }

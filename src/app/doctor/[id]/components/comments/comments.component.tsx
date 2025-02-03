@@ -14,15 +14,15 @@ type Props = {
 
 export default function CommentComponent({ name }: Props) {
   return (
-    <div>
-      <b>نظرات در مورد {name}</b>
-      <SearchProvider>
-        <CommentsProvider comments={comments}>
-          <CardComponent title={<CommentsTitleComponent />}>
-            <CommentsResultComponent />
-          </CardComponent>
-        </CommentsProvider>
-      </SearchProvider>
-    </div>
+    <SearchProvider>
+      <CommentsProvider comments={comments}>
+        <CardComponent
+          title={<CommentsTitleComponent />}
+          outsideTitle={`نظرات در مورد ${name}`}
+        >
+          <CommentsResultComponent />
+        </CardComponent>
+      </CommentsProvider>
+    </SearchProvider>
   );
 }

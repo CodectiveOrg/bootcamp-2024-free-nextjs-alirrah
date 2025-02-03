@@ -40,7 +40,10 @@ export default function InfoComponent({
         <MingcuteShareLine />
         <p>اشتراک گذاری</p>
       </ButtonComponent>
-      <CardComponent className={styles["info-box"]}>
+      <CardComponent
+        className={styles["info-box"]}
+        outsideClassName={styles["out-side"]}
+      >
         <Image
           src={`https://cdn.paziresh24.com${doctorImage}`}
           alt="عکس پروفایل دکتر"

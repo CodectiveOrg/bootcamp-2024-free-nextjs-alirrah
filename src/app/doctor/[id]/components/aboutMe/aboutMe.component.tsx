@@ -12,11 +12,8 @@ export default function AboutMeComponent({ aboutMe }: Props) {
   }
 
   return (
-    <div className={styles["about-me"]}>
-      <b>درباره من</b>
-      <CardComponent>
-        <p>{aboutMe}</p>
-      </CardComponent>
-    </div>
+    <CardComponent outsideTitle="درباره من" className={styles["about-me"]}>
+      <p>{aboutMe}</p>
+    </CardComponent>
   );
 }

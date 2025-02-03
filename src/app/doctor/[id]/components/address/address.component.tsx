@@ -16,24 +16,21 @@ export default function AddressComponent({ doctorAddresses }: Props) {
   }
 
   return (
-    <div className={styles.address}>
-      <b>آدرس و تلفن تماس</b>
-      <CardComponent>
-        <ul>
-          {doctorAddresses.map((address) => (
-            <li key={address.key}>
-              <b>{address.title}</b>
-              <p>{address.location}</p>
-              {address.phones?.map((phone) => (
-                <a href={`tel:${phone}`} key={phone}>
-                  <MingcutePhoneLine />
-                  <p>{phone}</p>
-                </a>
-              ))}
-            </li>
-          ))}
-        </ul>
-      </CardComponent>
-    </div>
+    <CardComponent outsideTitle="آدرس و تلفن تماس" className={styles.address}>
+      <ul>
+        {doctorAddresses.map((address) => (
+          <li key={address.key}>
+            <b>{address.title}</b>
+            <p>{address.location}</p>
+            {address.phones?.map((phone) => (
+              <a href={`tel:${phone}`} key={phone}>
+                <MingcutePhoneLine />
+                <p>{phone}</p>
+              </a>
+            ))}
+          </li>
+        ))}
+      </ul>
+    </CardComponent>
   );
 }

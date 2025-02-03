@@ -7,31 +7,18 @@ import ButtonComponent from "@/components/button/button.component";
 
 import MingcuteShareLine from "@/icon/MingcuteShareLine";
 
+import { DoctorType } from "@/types/doctor.type";
+
 import styles from "./info.module.css";
 
 type Props = {
-  doctorImage: string;
-  doctorName: string;
-  doctorExpertise: string;
-  doctorAverageRating: number;
-  doctorTotalPeopleRate: number;
-  doctorMedicalSystemNumber: number;
+  doctor: DoctorType;
 };
 
-export default function InfoComponent({
-  doctorImage,
-  doctorName,
-  doctorExpertise,
-  doctorAverageRating,
-  doctorTotalPeopleRate,
-  doctorMedicalSystemNumber,
-}: Props) {
+export default function InfoComponent({ doctor }: Props) {
   const handleCopy = async () => {
-    const url =
-      typeof window !== "undefined" && window.location.origin
-        ? window.location.href
-        : "";
-    await navigator.clipboard.writeText(url);
+    const url = window?.location.href ?? "";
+    await navigator.share({ url });
   };
 
   return (
@@ -45,21 +32,21 @@ export default function InfoComponent({
         outsideClassName={styles["out-side"]}
       >
         <Image
-          src={`https://cdn.paziresh24.com${doctorImage}`}
+          src={`https://cdn.paziresh24.com${doctor.image}`}
           alt="عکس پروفایل دکتر"
           width={150}
           height={150}
         />
         <div>
-          <h1>{doctorName}</h1>
-          <p>شماره نظام پزشکی: {doctorMedicalSystemNumber}</p>
+          <h1>{doctor.name}</h1>
+          <p>شماره نظام پزشکی: {doctor.medicalSystemNumber}</p>
         </div>
       </CardComponent>
       <div className={styles.detail}>
-        <p className={styles.expertise}>{doctorExpertise}</p>
+        <p className={styles.expertise}>{doctor.expertise}</p>
         <p className={styles.rate}>
-          <span>{Math.round(doctorAverageRating * 100) / 100} از 5</span> رضایت
-          ({doctorTotalPeopleRate} نفر)
+          <span>{Math.floor(doctor.averageRating * 100) / 100} از 5</span> رضایت
+          ({doctor.totalPeopleRate} نفر)
         </p>
       </div>
     </CardComponent>

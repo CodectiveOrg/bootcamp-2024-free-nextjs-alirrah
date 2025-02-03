@@ -1,22 +1,22 @@
 :root {
-  --color-primary: hsl(214deg, 94%, 52%);
-  --color-primary-darker: hsl(214deg, 98%, 40%);
-  --color-primary-fade: hsl(200deg, 92%, 97.5%);
+  --color-primary: hsl(215deg, 95%, 50%);
+  --color-primary-darker: hsl(215deg, 100%, 40%);
+  --color-primary-fade: hsl(200deg, 90%, 95%);
   --color-primary-opposite: hsl(0, 0%, 100%);
 
   --color-secondary: hsl(0, 0%, 80%);
   --color-secondary-darker: hsl(0, 0%, 60%);
-  --color-secondary-lighter: hsl(0, 0%, 96%);
+  --color-secondary-lighter: hsl(0, 0%, 95%);
 
-  --color-danger: hsl(0, 79%, 52%);
+  --color-danger: hsl(0, 80%, 50%);
 
-  --color-star: hsl(32deg, 83%, 55%);
+  --color-star: hsl(30deg, 85%, 55%);
 
-  --color-success: hsl(142deg, 76%, 36%);
+  --color-success: hsl(140deg, 75%, 35%);
 
-  --color-user-profile-one: rgb(135, 108, 155);
-  --color-user-profile-two: rgb(229, 178, 225);
-  --color-user-profile-three: rgb(132, 147, 230);
+  --color-user-profile-one: hsl(275deg, 20%, 50%);
+  --color-user-profile-two: hsl(305deg, 50%, 80%);
+  --color-user-profile-three: hsl(230deg, 65%, 70%);
 
   --shadow: hsla(240deg, 35%, 30%, 0.15) 0 2px 5px 0,
     hsla(0, 0%, 0%, 0.05) 0 1px 1px 0;
@@ -30,7 +30,7 @@
 
   --animation-duration-fast: 0.1s;
   --animation-duration-normal: 0.3s;
-  --animation-duration-slow: 1.4s;
+  --animation-duration-slow: 1.5s;
 }
 
 *,

@@ -22,14 +22,14 @@
         stroke-dasharray: 48, 144;
         stroke-dashoffset: 192;
 
-        animation: beat_animation var(--animation-duration-slow) linear infinite;
+        animation: beat-animation var(--animation-duration-slow) linear infinite;
       }
     }
   }
 }
 
-@keyframes beat_animation {
-  72.5% {
+@keyframes beat-animation {
+  70% {
     opacity: 0;
   }
 

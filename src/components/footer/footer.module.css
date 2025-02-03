@@ -41,7 +41,7 @@
 
       svg {
         color: var(--color-primary);
-        font-size: var(--fz-600);
+        font-size: 1.75em;
 
         transition: color var(--animation-duration-fast) ease-in-out;
 

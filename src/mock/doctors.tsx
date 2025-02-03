@@ -253,9 +253,7 @@ export const doctors: DoctorType[] = [
     expertise: ExpertiseEnum.CHILDREN_DISEASES,
     medicalSystemNumber: 74141,
     isVerified: true,
-    activity: {
-      month: 1,
-    },
+    activity: {},
     averageRating: 4.93,
     firstAvailableAppointment: "16 دی 4 عصر",
     totalPeopleRate: 346,

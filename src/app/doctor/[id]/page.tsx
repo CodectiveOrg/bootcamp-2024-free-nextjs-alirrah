@@ -26,21 +26,9 @@ export default function Page({ params }: Props) {
   return (
     <div className={styles["doctor-id-page"]}>
       <section>
-        <InfoComponent
-          doctorImage={doctor.image}
-          doctorName={doctor.name}
-          doctorExpertise={doctor.expertise}
-          doctorAverageRating={doctor.averageRating}
-          doctorTotalPeopleRate={doctor.totalPeopleRate}
-          doctorMedicalSystemNumber={doctor.medicalSystemNumber}
-        />
+        <InfoComponent doctor={doctor} />
         <AboutMeComponent aboutMe={doctor.aboutMe} />
-        <ActivityComponent
-          doctorName={doctor.name}
-          monthActivity={doctor.activity.month}
-          yearActivity={doctor.activity.year}
-          activeConsultNumber={doctor.activeConsultNumber}
-        />
+        <ActivityComponent doctor={doctor} />
         <CommentComponent name={doctor.name} />
       </section>
       <aside>

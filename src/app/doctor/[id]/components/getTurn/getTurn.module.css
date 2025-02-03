@@ -5,7 +5,7 @@
     gap: 0.15rem;
 
     > svg {
-      font-size: var(--fz-600);
+      font-size: 1.5em;
     }
   }
 

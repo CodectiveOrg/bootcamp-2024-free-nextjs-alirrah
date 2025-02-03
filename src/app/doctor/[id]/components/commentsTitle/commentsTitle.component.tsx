@@ -20,7 +20,6 @@ export default function CommentsTitleComponent() {
     <div className={styles.title}>
       <input
         placeholder="جستجو در نظرات بیماران"
-        // value={search.query}
         onChange={(event) => changeQuery(event.target.value)}
       />
       <select

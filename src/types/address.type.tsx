@@ -1,5 +1,5 @@
 export type AddressType = {
-  key: number;
+  id: number;
   title: string;
   location: string;
   phones?: string[];

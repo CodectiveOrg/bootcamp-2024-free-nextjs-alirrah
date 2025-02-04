@@ -15,7 +15,7 @@ export default function CommentsResultComponent() {
     <ul className={styles["comments-result"]}>
       {filteredComments.map((comment) => (
         <>
-          <li key={comment.key}>
+          <li key={comment.id}>
             <div>
               <div>
                 <MingcuteUserFill className={styles.profile} />

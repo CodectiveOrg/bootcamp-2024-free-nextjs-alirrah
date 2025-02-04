@@ -19,7 +19,7 @@ export default function AddressComponent({ doctorAddresses }: Props) {
     <CardComponent outsideTitle="آدرس و تلفن تماس" className={styles.address}>
       <ul>
         {doctorAddresses.map((address) => (
-          <li key={address.key}>
+          <li key={address.id}>
             <b>{address.title}</b>
             <p>{address.location}</p>
             {address.phones?.map((phone) => (

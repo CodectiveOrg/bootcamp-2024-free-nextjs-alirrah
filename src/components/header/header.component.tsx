@@ -20,7 +20,7 @@ export default function HeaderComponent({ menu }: { menu: MenuItemType[] }) {
         <nav>
           <ul>
             {menu.map((link) => (
-              <li key={link.key}>
+              <li key={link.id}>
                 <Link
                   href={link.link}
                   className={clsx(pathname === link.link && styles.active)}

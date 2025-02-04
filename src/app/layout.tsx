@@ -29,12 +29,12 @@ export const metadata: Metadata = {
 
 const menu: MenuItemType[] = [
   {
-    key: 0,
+    id: 0,
     title: "خانه",
     link: "/",
   },
   {
-    key: 1,
+    id: 1,
     title: "جستجو",
     link: "/search",
   },
@@ -42,17 +42,17 @@ const menu: MenuItemType[] = [
 
 const socialMedia: socialLinkType[] = [
   {
-    key: 0,
+    id: 0,
     icon: <MingcuteTelegramFill />,
     link: "https://t.me/alirrah81",
   },
   {
-    key: 1,
+    id: 1,
     icon: <MingcuteLinkedinFill />,
     link: "https://www.linkedin.com/in/alireza-rahmani-samani-996477216/",
   },
   {
-    key: 2,
+    id: 2,
     icon: <MingcuteInsFill />,
     link: "https://instagram.com/alirrah81",
   },

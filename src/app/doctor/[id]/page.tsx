@@ -4,7 +4,7 @@ import { doctors } from "@/mock/doctors";
 
 import InfoComponent from "@/app/doctor/[id]/components/info/info.component";
 import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.component";
-import ActivityComponent from "@/app/doctor/[id]/components/activity/activity.component";
+import ActivitiesComponent from "@/app/doctor/[id]/components/activities/activitiesComponent";
 import CommentComponent from "@/app/doctor/[id]/components/comments/comments.component";
 import OnlineVisitComponent from "@/app/doctor/[id]/components/onlineVisit/onlineVisit.component";
 import GetTurnComponent from "@/app/doctor/[id]/components/getTurn/getTurn.component";
@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function Page({ params }: Props) {
-  const doctor = doctors.find((doctor) => `${doctor.key}` === params.id);
+  const doctor = doctors.find((doctor) => `${doctor.id}` === params.id);
 
   if (!doctor) {
     return notFound();
@@ -28,7 +28,7 @@ export default function Page({ params }: Props) {
       <section>
         <InfoComponent doctor={doctor} />
         <AboutMeComponent aboutMe={doctor.aboutMe} />
-        <ActivityComponent doctor={doctor} />
+        <ActivitiesComponent doctor={doctor} />
         <CommentComponent name={doctor.name} />
       </section>
       <aside>

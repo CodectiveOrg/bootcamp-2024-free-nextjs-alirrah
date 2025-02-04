@@ -1,5 +1,5 @@
 export type MenuItemType = {
-  key: number;
+  id: number;
   title: string;
   link: string;
 };

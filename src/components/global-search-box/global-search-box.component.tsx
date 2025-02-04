@@ -92,7 +92,7 @@ export default function GlobalSearchBoxComponent() {
       />
       <div className={styles.divider}></div>
       <div className={styles.suffix}>
-        <ButtonComponent>
+        <ButtonComponent className={styles.button}>
           <MingcuteLocationFill />
           همه شهرها
         </ButtonComponent>

@@ -9,7 +9,7 @@
     gap: 0.25rem;
 
     > li {
-      > button {
+      .button {
         inline-size: 100%;
 
         padding-block: 0.25rem;

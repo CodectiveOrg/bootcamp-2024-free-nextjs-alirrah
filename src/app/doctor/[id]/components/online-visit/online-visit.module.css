@@ -25,7 +25,7 @@
     font-size: var(--fz-300);
   }
 
-  button {
+  .button {
     display: flex;
     align-items: center;
     justify-content: space-between;

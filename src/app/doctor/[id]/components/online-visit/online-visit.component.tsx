@@ -40,7 +40,7 @@ export default function OnlineVisitComponent({
           تا <b>3 روز</b> می‌توانید هر سوالی دارید از پزشک بپرسید
         </li>
       </ul>
-      <ButtonComponent>
+      <ButtonComponent className={styles.button}>
         <p>شروع ویزیت با {doctorName}</p>
         <MingcuteArrowsLeftLine />
       </ButtonComponent>

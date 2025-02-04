@@ -24,7 +24,9 @@ export default function Error({ reset }: Props) {
         <Image src={errorImage} alt="" />
       </div>
       <div className={styles.actions}>
-        <ButtonComponent onClick={reset}>تلاش مجدد</ButtonComponent>
+        <ButtonComponent onClick={reset} className={styles.button}>
+          تلاش مجدد
+        </ButtonComponent>
       </div>
     </div>
   );

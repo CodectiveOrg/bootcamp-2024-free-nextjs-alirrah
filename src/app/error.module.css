@@ -39,7 +39,7 @@
     grid-area: actions;
     grid-column: 1 / -1;
 
-    > button {
+    .button {
       background-color: var(--color-primary);
 
       padding-inline: 2rem;

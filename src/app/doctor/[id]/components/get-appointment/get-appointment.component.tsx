@@ -20,7 +20,7 @@ export default function GetAppointmentComponent() {
       <ul>
         <li>امکان دریافت زودترین نوبت</li>
       </ul>
-      <ButtonComponent>
+      <ButtonComponent className={styles.button}>
         <p>دریافت نوبت</p>
         <MingcuteArrowsLeftLine />
       </ButtonComponent>

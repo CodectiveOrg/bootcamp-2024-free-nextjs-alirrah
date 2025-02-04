@@ -25,7 +25,10 @@ export default function ExpertiseFilterComponent() {
         {expertise.map(([key, value]) => (
           <li key={key}>
             <ButtonComponent
-              className={clsx(filters.expertise === value && styles.active)}
+              className={clsx(
+                styles.button,
+                filters.expertise === value && styles.active,
+              )}
               onClick={() =>
                 dispatchFilters({
                   type: "updated_filter",

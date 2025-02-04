@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import notFoundImage from "@/assets/illustrations/not-found.webp";
 
-import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchBox.component";
+import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import styles from "./not-found.module.css";
 

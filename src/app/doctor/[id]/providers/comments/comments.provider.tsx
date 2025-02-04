@@ -11,6 +11,8 @@ import {
 
 import { CommentType } from "@/types/comment.type";
 
+import { SearchOrderType } from "@/enums/search-ordering.enum";
+
 import { SearchContext } from "@/app/doctor/[id]/providers/search/search.provider";
 
 type ContextValue = {
@@ -47,17 +49,17 @@ export default function CommentsProvider({ children, comments }: Props) {
     const filteredComments = comments.filter(isVisible);
 
     filteredComments.sort((firstComment, secondComment) => {
-      if (search.ordering === "topRating") {
+      if (search.ordering === SearchOrderType.TOP_RATING) {
         return secondComment.rate - firstComment.rate;
       }
-      if (search.ordering === "lowRating") {
+      if (search.ordering === SearchOrderType.LOW_RATING) {
         return firstComment.rate - secondComment.rate;
       }
 
       const dateSecondComment = new Date(secondComment.dateTime).getTime();
       const dateFirstComment = new Date(firstComment.dateTime).getTime();
 
-      if (search.ordering === "timeNewest") {
+      if (search.ordering === SearchOrderType.MOST_RECENT) {
         return dateSecondComment - dateFirstComment;
       }
       return dateFirstComment - dateSecondComment;

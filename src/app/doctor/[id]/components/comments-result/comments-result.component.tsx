@@ -6,7 +6,7 @@ import MingcuteUserFill from "@/icon/MingcuteUserFill";
 
 import { CommentsContext } from "@/app/doctor/[id]/providers/comments/comments.provider";
 
-import styles from "./commentsResult.module.css";
+import styles from "./comments-result.module.css";
 
 export default function CommentsResultComponent() {
   const { filteredComments } = useContext(CommentsContext);

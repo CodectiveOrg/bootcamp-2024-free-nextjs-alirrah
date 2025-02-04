@@ -7,7 +7,7 @@ import clsx from "clsx";
 
 import ButtonComponent from "@/components/button/button.component";
 
-import { MenuItemType } from "@/types/menuItem.type";
+import { MenuItemType } from "@/types/menu-item.type";
 
 import styles from "./header.module.css";
 

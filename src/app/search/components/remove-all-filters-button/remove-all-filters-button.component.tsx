@@ -4,7 +4,7 @@ import { useContext, useMemo } from "react";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
-import styles from "./removeAllFiltersButton.module.css";
+import styles from "./remove-all-filters-button.module.css";
 import ButtonComponent from "@/components/button/button.component";
 
 export default function RemoveAllFiltersButtonComponent() {

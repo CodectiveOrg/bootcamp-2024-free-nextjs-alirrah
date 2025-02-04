@@ -2,9 +2,11 @@
 
 import { useContext, useLayoutEffect, useMemo, useRef } from "react";
 
+import { SearchOrderType } from "@/enums/search-ordering.enum";
+
 import { SearchContext } from "@/app/doctor/[id]/providers/search/search.provider";
 
-import styles from "./commentsTitle.module.css";
+import styles from "./comments-title.module.css";
 
 export default function CommentsTitleComponent() {
   const { search, dispatchSearch } = useContext(SearchContext);
@@ -33,10 +35,10 @@ export default function CommentsTitleComponent() {
           })
         }
       >
-        <option value="timeNewest">جدیدترین</option>
-        <option value="timeOldest">قدیمی‌ترین</option>
-        <option value="topRating">محبوب‌ترین</option>
-        <option value="lowRating">کم‌ترین امتیاز</option>
+        <option value={SearchOrderType.MOST_RECENT}>جدیدترین</option>
+        <option value={SearchOrderType.TIME_OLDEST}>قدیمی‌ترین</option>
+        <option value={SearchOrderType.TOP_RATING}>محبوب‌ترین</option>
+        <option value={SearchOrderType.LOW_RATING}>کم‌ترین امتیاز</option>
       </select>
     </div>
   );

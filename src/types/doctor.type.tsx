@@ -20,5 +20,5 @@ export type DoctorType = {
   totalPeopleRate: number;
   aboutMe?: string;
   onlineVisitPrice?: number;
-  addresses?: AddressType[];
+  addresses: AddressType[];
 };

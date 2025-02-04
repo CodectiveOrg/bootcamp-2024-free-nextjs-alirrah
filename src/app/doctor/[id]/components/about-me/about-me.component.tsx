@@ -1,6 +1,6 @@
 import CardComponent from "@/components/card/card.component";
 
-import styles from "./aboutMe.module.css";
+import styles from "./about-me.module.css";
 
 type Props = {
   aboutMe?: string;

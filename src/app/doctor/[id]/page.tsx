@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { doctors } from "@/mock/doctors";
 
 import InfoComponent from "@/app/doctor/[id]/components/info/info.component";
-import AboutMeComponent from "@/app/doctor/[id]/components/aboutMe/aboutMe.component";
-import ActivitiesComponent from "@/app/doctor/[id]/components/activities/activitiesComponent";
+import AboutMeComponent from "@/app/doctor/[id]/components/about-me/about-me.component";
+import ActivitiesComponent from "@/app/doctor/[id]/components/activities/activities.component";
 import CommentComponent from "@/app/doctor/[id]/components/comments/comments.component";
-import OnlineVisitComponent from "@/app/doctor/[id]/components/onlineVisit/onlineVisit.component";
-import GetTurnComponent from "@/app/doctor/[id]/components/getTurn/getTurn.component";
+import OnlineVisitComponent from "@/app/doctor/[id]/components/online-visit/online-visit.component";
+import GetAppointmentComponent from "@/app/doctor/[id]/components/get-appointment/get-appointment.component";
 import AddressComponent from "@/app/doctor/[id]/components/address/address.component";
 
 import styles from "./page.module.css";
@@ -36,7 +36,7 @@ export default function Page({ params }: Props) {
           doctorName={doctor.name}
           onlineVisitPrice={doctor.onlineVisitPrice}
         />
-        <GetTurnComponent />
+        <GetAppointmentComponent />
         <AddressComponent doctorAddresses={doctor.addresses} />
       </aside>
     </div>

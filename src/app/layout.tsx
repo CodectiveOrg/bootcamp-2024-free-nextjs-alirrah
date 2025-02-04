@@ -6,8 +6,8 @@ import { Vazirmatn } from "next/font/google";
 import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
 
-import { MenuItemType } from "@/types/menuItem.type";
-import { socialLinkType } from "@/types/socialLink.type";
+import { MenuItemType } from "@/types/menu-item.type";
+import { socialLinkType } from "@/types/social-link.type";
 
 import MingcuteTelegramFill from "@/icon/MingcuteTelegramFill";
 import MingcuteLinkedinFill from "@/icon/MingcuteLinkedinFill";

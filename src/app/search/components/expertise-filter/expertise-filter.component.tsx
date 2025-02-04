@@ -11,7 +11,7 @@ import { ExpertiseEnum } from "@/enums/expertise.enum";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
-import styles from "./expertiseFilter.module.css";
+import styles from "./expertise-filter.module.css";
 
 const expertise = Object.entries(ExpertiseEnum);
 

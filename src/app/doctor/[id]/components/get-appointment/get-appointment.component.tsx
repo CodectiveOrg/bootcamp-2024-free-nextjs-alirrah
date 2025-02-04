@@ -4,9 +4,9 @@ import ButtonComponent from "@/components/button/button.component";
 import MingcuteWalkFill from "@/icon/MingcuteWalkFill";
 import MingcuteArrowsLeftLine from "@/icon/MingcuteArrowsLeftLine";
 
-import styles from "./getTurn.module.css";
+import styles from "./get-appointment.module.css";
 
-export default function GetTurnComponent() {
+export default function GetAppointmentComponent() {
   return (
     <CardComponent
       className={styles["get-turn"]}

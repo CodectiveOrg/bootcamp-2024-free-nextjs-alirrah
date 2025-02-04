@@ -12,7 +12,7 @@ import MingcuteLocationFill from "@/icon/MingcuteLocationFill";
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 import { OrderContext } from "@/app/search/providers/order/order.provider";
 
-import styles from "./globalSearchBox.module.css";
+import styles from "./global-search-box.module.css";
 
 export default function GlobalSearchBoxComponent() {
   const router = useRouter();

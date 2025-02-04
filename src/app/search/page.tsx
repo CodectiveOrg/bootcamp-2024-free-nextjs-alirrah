@@ -1,4 +1,4 @@
-import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchBox.component";
+import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import { doctors } from "@/mock/doctors";
 
@@ -12,8 +12,8 @@ import FiltersProvider from "@/app/search/providers/filters/filters.provider";
 import OrderProvider from "@/app/search/providers/order/order.provider";
 import DoctorsProvider from "@/app/search/providers/doctors/doctors.provider";
 
-import SidebarFiltersComponent from "@/app/search/components/sidebarFilters/sidebarFilters.component";
-import TopBarComponent from "@/app/search/components/topBar/topBar.component";
+import SidebarFiltersComponent from "@/app/search/components/sidebar-filters/sidebar-filters.component";
+import TopBarComponent from "@/app/search/components/top-bar/top-bar.component";
 import ResultsComponent from "@/app/search/components/results/results.component";
 
 import styles from "./page.module.css";

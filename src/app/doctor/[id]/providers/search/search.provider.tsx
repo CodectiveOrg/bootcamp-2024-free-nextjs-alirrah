@@ -4,6 +4,8 @@ import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
 
 import { SearchType } from "@/types/search.type";
 
+import { SearchOrderType } from "@/enums/search-ordering.enum";
+
 import {
   SearchAction,
   searchReducer,
@@ -15,13 +17,13 @@ type Value = {
 };
 
 export const SearchContext = createContext<Value>({
-  search: { ordering: "timeNewest" },
+  search: { ordering: SearchOrderType.MOST_RECENT },
   dispatchSearch: () => {},
 });
 
 export default function SearchProvider({ children }: PropsWithChildren) {
   const initial: SearchType = {
-    ordering: "timeNewest",
+    ordering: SearchOrderType.MOST_RECENT,
   };
   const [search, dispatchSearch] = useReducer(searchReducer, initial);
 

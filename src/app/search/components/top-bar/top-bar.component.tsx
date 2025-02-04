@@ -8,7 +8,7 @@ import { DoctorsContext } from "@/app/search/providers/doctors/doctors.provider"
 
 import OrderingComponent from "@/app/search/components/ordering/ordering.component";
 
-import styles from "./topBar.module.css";
+import styles from "./top-bar.module.css";
 
 type Props = {
   className?: string;

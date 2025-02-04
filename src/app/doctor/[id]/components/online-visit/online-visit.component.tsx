@@ -4,7 +4,7 @@ import ButtonComponent from "@/components/button/button.component";
 import MingcuteArrowsLeftLine from "@/icon/MingcuteArrowsLeftLine";
 import MingcuteWifiLine from "@/icon/MingcuteWifiLine";
 
-import styles from "./onlineVisit.module.css";
+import styles from "./online-visit.module.css";
 
 type Props = {
   doctorName: string;

@@ -1,4 +1,4 @@
-import GlobalSearchBoxComponent from "@/components/globalSearchBox/globalSearchBox.component";
+import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import styles from "./page.module.css";
 

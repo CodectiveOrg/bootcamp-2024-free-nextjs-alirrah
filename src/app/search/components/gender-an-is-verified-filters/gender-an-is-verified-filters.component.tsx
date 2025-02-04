@@ -10,9 +10,9 @@ import { FiltersContext } from "@/app/search/providers/filters/filters.provider"
 
 import ToggleComponent from "@/app/search/components/toggle/toggle.component";
 
-import styles from "./genderAndIsVerifiedFilters.module.css";
+import styles from "./gender-an-is-verified-filters.module.css";
 
-export default function GenderAndIsVerifiedFiltersComponent() {
+export default function GenderAnIsVerifiedFiltersComponent() {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   return (

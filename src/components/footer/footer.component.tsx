@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { socialLinkType } from "@/types/socialLink.type";
+import { socialLinkType } from "@/types/social-link.type";
 
 import Logo from "@/assets/logo/logo.svg";
 

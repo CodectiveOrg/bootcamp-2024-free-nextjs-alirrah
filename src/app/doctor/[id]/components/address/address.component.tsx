@@ -7,14 +7,10 @@ import MingcutePhoneLine from "@/icon/MingcutePhoneLine";
 import styles from "./address.module.css";
 
 type Props = {
-  doctorAddresses?: AddressType[];
+  doctorAddresses: AddressType[];
 };
 
 export default function AddressComponent({ doctorAddresses }: Props) {
-  if (!doctorAddresses || doctorAddresses.length === 0) {
-    return null;
-  }
-
   return (
     <CardComponent outsideTitle="آدرس و تلفن تماس" className={styles.address}>
       <ul>

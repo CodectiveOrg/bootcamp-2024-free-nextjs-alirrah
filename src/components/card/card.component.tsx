@@ -7,7 +7,7 @@ import styles from "./card.module.css";
 type Props = {
   className?: string;
   showShadow?: boolean;
-  title?: React.ReactNode;
+  title?: React.ReactNode | string;
   outsideTitle?: string;
   outsideClassName?: string;
 };

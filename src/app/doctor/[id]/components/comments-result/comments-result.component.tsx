@@ -14,40 +14,35 @@ export default function CommentsResultComponent() {
   return (
     <ul className={styles["comments-result"]}>
       {filteredComments.map((comment) => (
-        <>
-          <li key={comment.id}>
+        <li key={comment.id}>
+          <div>
             <div>
+              <MingcuteUserFill className={styles.profile} />
               <div>
-                <MingcuteUserFill className={styles.profile} />
-                <div>
-                  <b>{comment.author}</b>
-                  <p className={styles["date-time"]}>
-                    {convertDateTime(comment.dateTime)}
-                  </p>
-                </div>
+                <b>{comment.author}</b>
+                <p className={styles["date-time"]}>
+                  {convertDateTime(comment.dateTime)}
+                </p>
               </div>
-              <p className={styles.rate}>
-                {Math.round(comment.rate * 10) / 10}
-              </p>
             </div>
-            <p className={styles.description}>{comment.description}</p>
-          </li>
-          <div className={styles.divider} />
-        </>
+            <p className={styles.rate}>{Math.round(comment.rate * 10) / 10}</p>
+          </div>
+          <p className={styles.description}>{comment.description}</p>
+        </li>
       ))}
     </ul>
   );
 }
 
-function convertDateTime(inputDate: string) {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  };
+const options: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+};
 
+function convertDateTime(inputDate: string) {
   return new Date(inputDate).toLocaleDateString("fa-IR", options);
 }

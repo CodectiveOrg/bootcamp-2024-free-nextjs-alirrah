@@ -25,12 +25,7 @@ export default function CardComponent({
     <div className={outsideClassName}>
       {outsideTitle && <b>{outsideTitle}</b>}
       <div
-        className={clsx(
-          styles.card,
-          className,
-          showShadow && styles.shadow,
-          !!title && styles["has-title"],
-        )}
+        className={clsx(styles.card, className, showShadow && styles.shadow)}
         {...props}
       >
         {!!title ? (

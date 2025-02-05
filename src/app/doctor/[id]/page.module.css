@@ -1,5 +1,7 @@
 .doctor-id-page {
-  display: flex;
+  display: grid;
+  grid-template: "content aside";
+  grid-template-columns: 2fr 1fr;
   gap: 1rem;
 
   padding-block-end: 2rem;
@@ -12,10 +14,10 @@
   }
 
   > section {
-    flex: 2;
+    grid-area: content;
   }
 
   > aside {
-    flex: 1;
+    grid-area: aside;
   }
 }

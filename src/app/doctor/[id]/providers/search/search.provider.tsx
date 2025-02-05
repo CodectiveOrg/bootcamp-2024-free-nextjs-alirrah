@@ -1,34 +1,32 @@
 "use client";
 
-import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
+import { createContext, PropsWithChildren, useCallback, useState } from "react";
 
 import { SearchType } from "@/types/search.type";
 
 import { SearchOrderType } from "@/enums/search-ordering.enum";
 
-import {
-  SearchAction,
-  searchReducer,
-} from "@/app/doctor/[id]/reducers/search.reducer";
-
 type Value = {
   search: SearchType;
-  dispatchSearch: Dispatch<SearchAction>;
+  changeSearch: (key: keyof SearchType, value: string) => void;
 };
 
 export const SearchContext = createContext<Value>({
   search: { ordering: SearchOrderType.MOST_RECENT },
-  dispatchSearch: () => {},
+  changeSearch: () => {},
 });
 
 export default function SearchProvider({ children }: PropsWithChildren) {
-  const initial: SearchType = {
+  const [search, setSearch] = useState<SearchType>({
     ordering: SearchOrderType.MOST_RECENT,
-  };
-  const [search, dispatchSearch] = useReducer(searchReducer, initial);
+  });
+
+  const changeSearch = useCallback((key: keyof SearchType, value: string) => {
+    setSearch((prev) => ({ ...prev, [key]: value }));
+  }, []);
 
   return (
-    <SearchContext.Provider value={{ search, dispatchSearch }}>
+    <SearchContext.Provider value={{ search, changeSearch }}>
       {children}
     </SearchContext.Provider>
   );

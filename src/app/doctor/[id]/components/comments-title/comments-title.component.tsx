@@ -11,13 +11,10 @@ import { SearchContext } from "@/app/doctor/[id]/providers/search/search.provide
 import styles from "./comments-title.module.css";
 
 export default function CommentsTitleComponent() {
-  const { search, dispatchSearch } = useContext(SearchContext);
+  const { search, changeSearch } = useContext(SearchContext);
 
   const changeQuery = useDebounce((value: string) => {
-    dispatchSearch({
-      key: "query",
-      value: value,
-    });
+    changeSearch("query", value);
   }, 300);
 
   return (
@@ -30,12 +27,7 @@ export default function CommentsTitleComponent() {
         name="ordering"
         id="ordering"
         value={search.ordering}
-        onChange={(event) =>
-          dispatchSearch({
-            key: "ordering",
-            value: event.target.value,
-          })
-        }
+        onChange={(event) => changeSearch("ordering", event.target.value)}
       >
         <option value={SearchOrderType.MOST_RECENT}>جدیدترین</option>
         <option value={SearchOrderType.TIME_OLDEST}>قدیمی‌ترین</option>

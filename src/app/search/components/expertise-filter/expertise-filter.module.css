@@ -27,6 +27,8 @@
 
         &:hover {
           background-color: var(--color-primary-fade);
+
+          color: inherit;
         }
       }
     }

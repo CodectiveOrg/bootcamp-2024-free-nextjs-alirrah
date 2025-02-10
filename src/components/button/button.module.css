@@ -1,10 +1,21 @@
 .button {
-  background-color: transparent;
+  background-color: var(--color-primary-opposite);
 
   border: none;
-  border-radius: var(--border-radius-medium);
 
   padding: 0.5rem 1rem;
 
   cursor: pointer;
+
+  &.small {
+    border-radius: var(--border-radius-small);
+  }
+
+  &.medium {
+    border-radius: var(--border-radius-medium);
+  }
+
+  &.large {
+    border-radius: var(--border-radius-large);
+  }
 }

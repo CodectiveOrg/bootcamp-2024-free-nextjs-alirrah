@@ -17,6 +17,7 @@ export default function CommentComponent({ name }: Props) {
     <SearchProvider>
       <CommentsProvider comments={comments}>
         <CardComponent
+          showShadow
           title={<CommentsTitleComponent />}
           outsideTitle={`نظرات در مورد ${name}`}
         >

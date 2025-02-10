@@ -25,7 +25,11 @@ export default function ActivitiesComponent({ doctor }: Props) {
   }, [monthActivity, yearActivity]);
 
   return (
-    <CardComponent outsideTitle="فعالیت‌ها" className={styles.activities}>
+    <CardComponent
+      showShadow
+      outsideTitle="فعالیت‌ها"
+      className={styles.activities}
+    >
       <CardComponent className={styles.activity}>
         <MingcuteMedalLine />
         <p>

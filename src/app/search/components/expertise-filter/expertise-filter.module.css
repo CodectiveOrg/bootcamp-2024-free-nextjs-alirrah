@@ -26,9 +26,7 @@
         }
 
         &:hover {
-          background-color: var(--color-primary-darker);
-
-          color: var(--color-primary-opposite);
+          background-color: var(--color-primary-fade);
         }
       }
     }

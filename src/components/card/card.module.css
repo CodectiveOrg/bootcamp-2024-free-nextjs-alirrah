@@ -1,5 +1,5 @@
 .card {
-  background-color: var(--color-primary-fade);
+  background-color: var(--color-primary-opposite);
 
   border-radius: var(--border-radius-small);
 
@@ -12,13 +12,29 @@
   }
 
   &:has(.title) {
+    &.shadow {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      box-shadow: none;
+
+      .title,
+      .body {
+        box-shadow: var(--shadow);
+      }
+    }
     .title,
     .body {
       padding: 0.75rem;
     }
 
-    hr {
-      border: 2px solid var(--color-primary-opposite);
+    .title {
+      border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    }
+
+    .body {
+      border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
     }
   }
 }

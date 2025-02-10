@@ -9,11 +9,7 @@
       flex-direction: column;
       gap: 0.5rem;
 
-      background-color: var(--color-primary-opposite);
-
       padding: 0.5rem;
-
-      border-radius: var(--border-radius-small);
 
       > p {
         font-size: var(--fz-300);
@@ -37,7 +33,7 @@
         transition: background-color var(--animation-duration-fast) ease-in-out;
 
         &:hover {
-          background-color: var(--color-primary-fade);
+          background-color: var(--color-surface);
         }
 
         > svg {

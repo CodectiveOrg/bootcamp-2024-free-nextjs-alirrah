@@ -9,6 +9,7 @@ import styles from "./get-appointment.module.css";
 export default function GetAppointmentComponent() {
   return (
     <CardComponent
+      showShadow
       className={styles["get-turn"]}
       title={
         <div className={styles.title}>
@@ -20,7 +21,7 @@ export default function GetAppointmentComponent() {
       <ul>
         <li>امکان دریافت زودترین نوبت</li>
       </ul>
-      <ButtonComponent className={styles.button}>
+      <ButtonComponent size="small" className={styles.button}>
         <p>دریافت نوبت</p>
         <MingcuteArrowsLeftLine />
       </ButtonComponent>

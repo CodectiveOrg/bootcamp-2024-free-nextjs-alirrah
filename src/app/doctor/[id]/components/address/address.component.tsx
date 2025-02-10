@@ -12,7 +12,11 @@ type Props = {
 
 export default function AddressComponent({ doctorAddresses }: Props) {
   return (
-    <CardComponent outsideTitle="آدرس و تلفن تماس" className={styles.address}>
+    <CardComponent
+      showShadow
+      outsideTitle="آدرس و تلفن تماس"
+      className={styles.address}
+    >
       <ul>
         {doctorAddresses.map((address) => (
           <li key={address.id}>

@@ -31,7 +31,6 @@ export default function CardComponent({
         {!!title ? (
           <>
             <div className={styles.title}>{title}</div>
-            <hr />
             <div className={styles.body}>{children}</div>
           </>
         ) : (

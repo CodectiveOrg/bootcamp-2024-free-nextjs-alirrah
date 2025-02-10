@@ -25,6 +25,7 @@ export default function ExpertiseFilterComponent() {
         {expertise.map(([key, value]) => (
           <li key={key}>
             <ButtonComponent
+              size="small"
               className={clsx(
                 styles.button,
                 filters.expertise === value && styles.active,

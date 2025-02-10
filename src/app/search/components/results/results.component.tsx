@@ -58,7 +58,7 @@ export default function ResultsComponent({ className }: Props) {
               </div>
               <div className={styles.star}>
                 <MingcuteStarFill />
-                <p>{Math.round(doctor.averageRating * 100) / 100}</p>
+                <p>{Math.round(doctor.averageRating * 10) / 10}</p>
               </div>
             </div>
             <Link href={`/doctor/${doctor.id}`}>دریافت نوبت</Link>

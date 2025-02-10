@@ -3,6 +3,8 @@
   align-items: center;
   gap: 0.5rem;
 
+  background-color: var(--color-primary-opposite);
+
   inline-size: min(50rem, 100%);
 
   padding-inline: 1rem;

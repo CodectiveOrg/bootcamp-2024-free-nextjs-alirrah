@@ -12,7 +12,11 @@ export default function AboutMeComponent({ aboutMe }: Props) {
   }
 
   return (
-    <CardComponent outsideTitle="درباره من" className={styles["about-me"]}>
+    <CardComponent
+      showShadow
+      outsideTitle="درباره من"
+      className={styles["about-me"]}
+    >
       <p>{aboutMe}</p>
     </CardComponent>
   );

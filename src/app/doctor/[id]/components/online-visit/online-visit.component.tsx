@@ -21,6 +21,7 @@ export default function OnlineVisitComponent({
 
   return (
     <CardComponent
+      showShadow
       className={styles["online-visit"]}
       title={
         <div className={styles.title}>
@@ -40,7 +41,7 @@ export default function OnlineVisitComponent({
           تا <b>3 روز</b> می‌توانید هر سوالی دارید از پزشک بپرسید
         </li>
       </ul>
-      <ButtonComponent className={styles.button}>
+      <ButtonComponent size="small" className={styles.button}>
         <p>شروع ویزیت با {doctorName}</p>
         <MingcuteArrowsLeftLine />
       </ButtonComponent>

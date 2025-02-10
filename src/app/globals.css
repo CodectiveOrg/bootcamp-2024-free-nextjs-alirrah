@@ -1,8 +1,10 @@
 :root {
-  --color-primary: hsl(215deg, 95%, 50%);
-  --color-primary-darker: hsl(215deg, 100%, 40%);
-  --color-primary-fade: hsl(200deg, 90%, 95%);
+  --color-primary: hsl(215deg, 65%, 55%);
+  --color-primary-darker: hsl(215, 65%, 45%);
+  --color-primary-fade: hsl(215, 42%, 91%);
   --color-primary-opposite: hsl(0, 0%, 100%);
+
+  --color-surface: hsl(200deg, 99%, 98%);
 
   --color-secondary: hsl(0, 0%, 80%);
   --color-secondary-darker: hsl(0, 0%, 60%);
@@ -18,7 +20,7 @@
   --color-user-profile-two: hsl(305deg, 50%, 80%);
   --color-user-profile-three: hsl(230deg, 65%, 70%);
 
-  --shadow: hsla(240deg, 35%, 30%, 0.15) 0 2px 5px 0,
+  --shadow: hsla(240deg, 35%, 30%, 0.15) 0 0 5px 0,
     hsla(0, 0%, 0%, 0.05) 0 1px 1px 0;
 
   --border-radius-large: 1rem;
@@ -74,6 +76,8 @@ a {
 body {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
+
+  background-color: var(--color-surface);
 
   min-block-size: 100vh;
   min-block-size: 100dvh;

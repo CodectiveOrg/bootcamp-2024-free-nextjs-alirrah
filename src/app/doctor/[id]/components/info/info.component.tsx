@@ -22,7 +22,7 @@ export default function InfoComponent({ doctor }: Props) {
   };
 
   return (
-    <CardComponent className={styles.info}>
+    <CardComponent showShadow className={styles.info}>
       <ButtonComponent className={styles.share} onClick={handleCopy}>
         <MingcuteShareLine />
         <p>اشتراک گذاری</p>

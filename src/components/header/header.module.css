@@ -33,13 +33,20 @@
     }
 
     .booking {
+      background-color: var(--color-primary-opposite);
+
+      padding: 0.5rem 1rem;
+
       border: 1px solid currentcolor;
+      border-radius: var(--border-radius-medium);
 
       color: var(--color-primary);
       font-weight: 700;
 
       transition: var(--animation-duration-fast) ease-in-out;
       transition-property: background-color, color;
+
+      cursor: pointer;
 
       &:hover {
         background-color: var(--color-primary);

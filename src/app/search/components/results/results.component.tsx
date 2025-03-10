@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +23,7 @@ type Props = {
   className?: string;
 };
 
-export default function ResultsComponent({ className }: Props) {
+export default function ResultsComponent({ className }: Props): ReactNode {
   const { filteredDoctors } = useContext(DoctorsContext);
 
   return (

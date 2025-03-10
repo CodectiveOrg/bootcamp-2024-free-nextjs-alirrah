@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import clsx from "clsx";
 
@@ -14,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-export default function TopBarComponent({ className }: Props) {
+export default function TopBarComponent({ className }: Props): ReactNode {
   const { filteredDoctors } = useContext(DoctorsContext);
 
   return (

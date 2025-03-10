@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
@@ -61,8 +61,8 @@ const socialMedia: socialLinkType[] = [
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: ReactNode;
+}>): ReactNode {
   return (
     <html lang="fa" dir="rtl" className={vazirmatn.className}>
       <body>

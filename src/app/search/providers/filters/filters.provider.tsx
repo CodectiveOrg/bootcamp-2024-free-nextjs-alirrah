@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
+import {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  ReactNode,
+  useReducer,
+} from "react";
 
 import { FiltersType } from "@/types/filters.type";
 
@@ -23,7 +29,10 @@ type Props = PropsWithChildren & {
   defaultFilters: FiltersType;
 };
 
-export default function FiltersProvider({ children, defaultFilters }: Props) {
+export default function FiltersProvider({
+  children,
+  defaultFilters,
+}: Props): ReactNode {
   const [filters, dispatchFilters] = useReducer(filtersReducer, defaultFilters);
 
   return (

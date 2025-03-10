@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, PropsWithChildren, useCallback, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  ReactNode,
+  useCallback,
+  useState,
+} from "react";
 
 import { SearchType } from "@/types/search.type";
 
@@ -16,7 +22,9 @@ export const SearchContext = createContext<Value>({
   changeSearch: () => {},
 });
 
-export default function SearchProvider({ children }: PropsWithChildren) {
+export default function SearchProvider({
+  children,
+}: PropsWithChildren): ReactNode {
   const [search, setSearch] = useState<SearchType>({
     ordering: SearchOrderType.MOST_RECENT,
   });

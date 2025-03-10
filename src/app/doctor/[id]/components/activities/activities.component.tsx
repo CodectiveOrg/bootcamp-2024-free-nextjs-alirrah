@@ -1,3 +1,5 @@
+import { ReactNode, useMemo } from "react";
+
 import CardComponent from "@/components/card/card.component";
 
 import MingcuteMedalLine from "@/icon/MingcuteMedalLine";
@@ -6,13 +8,12 @@ import MingcuteChatLine from "@/icon/MingcuteChatLine";
 import { DoctorType } from "@/types/doctor.type";
 
 import styles from "./activities.module.css";
-import { useMemo } from "react";
 
 type Props = {
   doctor: DoctorType;
 };
 
-export default function ActivitiesComponent({ doctor }: Props) {
+export default function ActivitiesComponent({ doctor }: Props): ReactNode {
   const monthActivity = doctor.activity.month || 0;
   const yearActivity = doctor.activity.year || 0;
   const activeConsultNumber = doctor.activeConsultNumber || 0;

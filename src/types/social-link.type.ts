@@ -1,7 +1,7 @@
-import React from "react";
+import { ReactNode } from "react";
 
 export type socialLinkType = {
   id: number;
-  icon: React.ReactNode;
+  icon: ReactNode;
   link: string;
 };

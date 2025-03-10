@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import styles from "./toggle.module.css";
 
 type Props = {
@@ -5,7 +7,10 @@ type Props = {
   onChange: () => void;
 };
 
-export default function ToggleComponent({ checked, onChange }: Props) {
+export default function ToggleComponent({
+  checked,
+  onChange,
+}: Props): ReactNode {
   return (
     <>
       <input

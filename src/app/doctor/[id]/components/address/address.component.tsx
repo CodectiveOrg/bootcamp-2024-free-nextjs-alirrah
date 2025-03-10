@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import CardComponent from "@/components/card/card.component";
 
 import { AddressType } from "@/types/address.type";
@@ -10,7 +12,9 @@ type Props = {
   doctorAddresses: AddressType[];
 };
 
-export default function AddressComponent({ doctorAddresses }: Props) {
+export default function AddressComponent({
+  doctorAddresses,
+}: Props): ReactNode {
   return (
     <CardComponent
       showShadow

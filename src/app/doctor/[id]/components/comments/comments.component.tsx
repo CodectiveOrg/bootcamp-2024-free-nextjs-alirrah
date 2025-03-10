@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import CardComponent from "@/components/card/card.component";
 
 import { comments } from "@/mock/comments";
@@ -12,7 +14,7 @@ type Props = {
   name: string;
 };
 
-export default function CommentComponent({ name }: Props) {
+export default function CommentComponent({ name }: Props): ReactNode {
   return (
     <SearchProvider>
       <CommentsProvider comments={comments}>

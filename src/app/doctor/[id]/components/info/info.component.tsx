@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
+
 import Image from "next/image";
 
 import CardComponent from "@/components/card/card.component";
@@ -15,7 +17,7 @@ type Props = {
   doctor: DoctorType;
 };
 
-export default function InfoComponent({ doctor }: Props) {
+export default function InfoComponent({ doctor }: Props): ReactNode {
   const handleCopy = async () => {
     const url = window?.location.href ?? "";
     await navigator.share({ url });

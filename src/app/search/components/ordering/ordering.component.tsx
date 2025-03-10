@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import CardComponent from "@/components/card/card.component";
 
@@ -10,7 +10,7 @@ import { OrderContext } from "@/app/search/providers/order/order.provider";
 
 import styles from "./ordering.module.css";
 
-export default function OrderingComponent() {
+export default function OrderingComponent(): ReactNode {
   const { ordering, dispatchOrder } = useContext(OrderContext);
 
   return (

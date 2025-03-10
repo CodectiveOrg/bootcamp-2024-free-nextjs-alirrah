@@ -1,13 +1,14 @@
 "use client";
 
-import { useContext, useMemo } from "react";
+import { ReactNode, useContext, useMemo } from "react";
+
+import ButtonComponent from "@/components/button/button.component";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
 import styles from "./remove-all-filters-button.module.css";
-import ButtonComponent from "@/components/button/button.component";
 
-export default function RemoveAllFiltersButtonComponent() {
+export default function RemoveAllFiltersButtonComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const isEmpty = useMemo(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import { useDebounce } from "@/hooks/debounce";
 
@@ -10,7 +10,7 @@ import { SearchContext } from "@/app/doctor/[id]/providers/search/search.provide
 
 import styles from "./comments-title.module.css";
 
-export default function CommentsTitleComponent() {
+export default function CommentsTitleComponent(): ReactNode {
   const { search, changeSearch } = useContext(SearchContext);
 
   const changeQuery = useDebounce((value: string) => {

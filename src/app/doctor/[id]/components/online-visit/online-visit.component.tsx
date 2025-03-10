@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import CardComponent from "@/components/card/card.component";
 import ButtonComponent from "@/components/button/button.component";
 
@@ -14,7 +16,7 @@ type Props = {
 export default function OnlineVisitComponent({
   doctorName,
   onlineVisitPrice,
-}: Props) {
+}: Props): ReactNode {
   if (!onlineVisitPrice) {
     return null;
   }

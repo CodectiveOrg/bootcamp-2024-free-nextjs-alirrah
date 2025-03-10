@@ -3,6 +3,7 @@
 import {
   createContext,
   PropsWithChildren,
+  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -27,7 +28,10 @@ type Props = PropsWithChildren & {
   comments: CommentType[];
 };
 
-export default function CommentsProvider({ children, comments }: Props) {
+export default function CommentsProvider({
+  children,
+  comments,
+}: Props): ReactNode {
   const { search } = useContext(SearchContext);
 
   const [filteredComments, setFilteredComments] = useState<CommentType[]>([]);

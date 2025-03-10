@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
+
 import Image from "next/image";
 
 import ButtonComponent from "@/components/button/button.component";
@@ -12,7 +14,7 @@ type Props = {
   reset: () => void;
 };
 
-export default function Error({ reset }: Props) {
+export default function Error({ reset }: Props): ReactNode {
   return (
     <div className={styles.error}>
       <div className={styles.writings}>

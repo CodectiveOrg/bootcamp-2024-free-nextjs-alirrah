@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import clsx from "clsx";
 
@@ -15,7 +15,7 @@ export default function ButtonComponent({
   onClick,
   size = "medium",
   children,
-}: Props) {
+}: Props): ReactNode {
   return (
     <button
       className={clsx(styles.button, className, styles[`${size}`])}

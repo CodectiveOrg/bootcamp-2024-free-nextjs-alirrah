@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, Dispatch, PropsWithChildren, useReducer } from "react";
+import {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  ReactNode,
+  useReducer,
+} from "react";
 
 import { OrderingEnum } from "@/enums/ordering.enum";
 
@@ -23,7 +29,10 @@ type Props = PropsWithChildren & {
   defaultOrdering: OrderingEnum;
 };
 
-export default function OrderProvider({ children, defaultOrdering }: Props) {
+export default function OrderProvider({
+  children,
+  defaultOrdering,
+}: Props): ReactNode {
   const [ordering, dispatchOrder] = useReducer(
     OrderingReducer,
     defaultOrdering,

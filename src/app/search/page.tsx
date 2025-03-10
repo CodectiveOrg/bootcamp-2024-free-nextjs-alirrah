@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import GlobalSearchBoxComponent from "@/components/global-search-box/global-search-box.component";
 
 import { doctors } from "@/mock/doctors";
@@ -24,7 +26,7 @@ type Props = {
   searchParams: SearchParams;
 };
 
-export default function Page({ searchParams }: Props) {
+export default function Page({ searchParams }: Props): ReactNode {
   const defaultFilters = generateDefaultFilters(searchParams);
   const defaultOrdering = generateDefaultOrdering(searchParams);
 

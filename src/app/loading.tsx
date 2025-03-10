@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 import styles from "./loading.module.css";
 
-export default function Loading() {
+export default function Loading(): ReactNode {
   return (
     <div className={styles.loading}>
       <svg height="48px" width="64px">

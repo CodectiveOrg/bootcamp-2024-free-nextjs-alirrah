@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, ReactNode, useState } from "react";
 
 import ButtonComponent from "@/components/button/button.component";
 import InputComponent from "@/components/input/input.component";
@@ -14,7 +14,7 @@ import MingcuteEyeCloseLine from "@/icon/MingcuteEyeCloseLine";
 
 import styles from "@/app/auth/styles/auth-form.module.css";
 
-export default function SignUpFormComponent() {
+export default function SignUpFormComponent(): ReactNode {
   const [showPassword, setShowPassword] = useState(false);
 
   const formSubmitHandler = async (

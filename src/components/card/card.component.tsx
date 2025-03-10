@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 import clsx from "clsx";
 
@@ -7,7 +7,7 @@ import styles from "./card.module.css";
 type Props = {
   className?: string;
   showShadow?: boolean;
-  title?: React.ReactNode | string;
+  title?: ReactNode | string;
   outsideTitle?: string;
   outsideClassName?: string;
 };
@@ -20,7 +20,7 @@ export default function CardComponent({
   outsideTitle,
   outsideClassName,
   ...props
-}: PropsWithChildren<Props>) {
+}: PropsWithChildren<Props>): ReactNode {
   return (
     <div className={outsideClassName}>
       {outsideTitle && <b>{outsideTitle}</b>}

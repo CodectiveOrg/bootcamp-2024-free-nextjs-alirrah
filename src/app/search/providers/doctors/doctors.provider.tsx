@@ -3,6 +3,7 @@
 import {
   createContext,
   PropsWithChildren,
+  ReactNode,
   useCallback,
   useContext,
   useEffect,
@@ -28,7 +29,7 @@ type Props = PropsWithChildren & {
   items: DoctorType[];
 };
 
-export default function DoctorsProvider({ children, items }: Props) {
+export default function DoctorsProvider({ children, items }: Props): ReactNode {
   const { filters } = useContext(FiltersContext);
   const { ordering } = useContext(OrderContext);
 

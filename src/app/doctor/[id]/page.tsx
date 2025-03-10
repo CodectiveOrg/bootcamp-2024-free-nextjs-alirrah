@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import { notFound } from "next/navigation";
 
 import { doctors } from "@/mock/doctors";
@@ -16,7 +18,7 @@ type Props = {
   params: { id: string };
 };
 
-export default function Page({ params }: Props) {
+export default function Page({ params }: Props): ReactNode {
   const doctor = doctors.find((doctor) => `${doctor.id}` === params.id);
 
   if (!doctor) {

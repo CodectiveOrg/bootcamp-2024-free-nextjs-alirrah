@@ -15,7 +15,7 @@ export default function InputComponent({
   suffixIcon,
   onSuffixClick,
   ...otherPops
-}: Props) {
+}: Props): ReactNode {
   return (
     <div className={styles.input}>
       {prefixIcon}

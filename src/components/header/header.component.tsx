@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,7 +11,11 @@ import { MenuItemType } from "@/types/menu-item.type";
 
 import styles from "./header.module.css";
 
-export default function HeaderComponent({ menu }: { menu: MenuItemType[] }) {
+export default function HeaderComponent({
+  menu,
+}: {
+  menu: MenuItemType[];
+}): ReactNode {
   const pathname = usePathname();
 
   return (

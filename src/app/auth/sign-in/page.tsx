@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import Link from "next/link";
 
 import CardComponent from "@/components/card/card.component";
@@ -6,7 +8,7 @@ import SignInFormComponent from "@/app/auth/components/sign-in-form/sign-in-form
 
 import styles from "@/app/auth/styles/auth-page.module.css";
 
-export default function Page() {
+export default function Page(): ReactNode {
   return (
     <CardComponent
       outsideClassName={styles["outside-page"]}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import MingcuteUserFill from "@/icon/MingcuteUserFill";
 
@@ -8,7 +8,7 @@ import { CommentsContext } from "@/app/doctor/[id]/providers/comments/comments.p
 
 import styles from "./comments-result.module.css";
 
-export default function CommentsResultComponent() {
+export default function CommentsResultComponent(): ReactNode {
   const { filteredComments } = useContext(CommentsContext);
 
   return (

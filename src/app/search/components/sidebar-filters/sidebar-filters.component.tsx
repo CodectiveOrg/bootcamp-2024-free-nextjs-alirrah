@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import clsx from "clsx";
 
 import RemoveAllFiltersButtonComponent from "@/app/search/components/remove-all-filters-button/remove-all-filters-button.component";
@@ -10,7 +12,9 @@ type Props = {
   className?: string;
 };
 
-export default function SidebarFiltersComponent({ className }: Props) {
+export default function SidebarFiltersComponent({
+  className,
+}: Props): ReactNode {
   return (
     <div className={clsx(styles.filters, className)}>
       <RemoveAllFiltersButtonComponent />

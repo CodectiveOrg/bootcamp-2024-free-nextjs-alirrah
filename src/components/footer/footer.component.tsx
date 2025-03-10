@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +13,7 @@ export default function FooterComponent({
   socialMedia,
 }: {
   socialMedia: socialLinkType[];
-}) {
+}): ReactNode {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>

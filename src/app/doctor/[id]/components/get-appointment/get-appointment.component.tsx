@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import CardComponent from "@/components/card/card.component";
 import ButtonComponent from "@/components/button/button.component";
 
@@ -6,7 +8,7 @@ import MingcuteArrowsLeftLine from "@/icon/MingcuteArrowsLeftLine";
 
 import styles from "./get-appointment.module.css";
 
-export default function GetAppointmentComponent() {
+export default function GetAppointmentComponent(): ReactNode {
   return (
     <CardComponent
       showShadow

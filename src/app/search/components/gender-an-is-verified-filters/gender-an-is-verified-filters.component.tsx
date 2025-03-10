@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import CardComponent from "@/components/card/card.component";
 
@@ -12,7 +12,7 @@ import ToggleComponent from "@/app/search/components/toggle/toggle.component";
 
 import styles from "./gender-an-is-verified-filters.module.css";
 
-export default function GenderAnIsVerifiedFiltersComponent() {
+export default function GenderAnIsVerifiedFiltersComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   return (

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import Image from "next/image";
 
 import notFoundImage from "@/assets/illustrations/not-found.webp";
@@ -6,7 +8,7 @@ import GlobalSearchBoxComponent from "@/components/global-search-box/global-sear
 
 import styles from "./not-found.module.css";
 
-export default function NotFound() {
+export default function NotFound(): ReactNode {
   return (
     <div className={styles["not-found"]}>
       <div className={styles.writings}>

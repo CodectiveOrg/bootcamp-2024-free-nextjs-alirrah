@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 
 import clsx from "clsx";
 
@@ -15,7 +15,7 @@ import styles from "./expertise-filter.module.css";
 
 const expertise = Object.entries(ExpertiseEnum);
 
-export default function ExpertiseFilterComponent() {
+export default function ExpertiseFilterComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   return (

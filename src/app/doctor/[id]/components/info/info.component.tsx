@@ -25,7 +25,12 @@ export default function InfoComponent({ doctor }: Props): ReactNode {
 
   return (
     <CardComponent showShadow className={styles.info}>
-      <ButtonComponent className={styles.share} onClick={handleCopy}>
+      <ButtonComponent
+        variant="primary"
+        shape="inherit"
+        className={styles.share}
+        onClick={handleCopy}
+      >
         <MingcuteShareLine />
         <p>اشتراک گذاری</p>
       </ButtonComponent>

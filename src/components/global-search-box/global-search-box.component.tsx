@@ -92,7 +92,12 @@ export default function GlobalSearchBoxComponent(): ReactNode {
       />
       <div className={styles.divider}></div>
       <div className={styles.suffix}>
-        <ButtonComponent className={styles.button}>
+        <ButtonComponent
+          variant="primary"
+          shape="inherit"
+          size="medium"
+          className={styles.button}
+        >
           <MingcuteLocationFill />
           همه شهرها
         </ButtonComponent>

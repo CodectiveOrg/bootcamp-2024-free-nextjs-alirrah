@@ -16,9 +16,6 @@
 
         text-align: start;
 
-        transition: var(--animation-duration-fast) ease-in-out;
-        transition-property: background-color, color;
-
         &.active {
           background-color: var(--color-primary);
 

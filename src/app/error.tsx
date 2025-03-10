@@ -26,7 +26,12 @@ export default function Error({ reset }: Props): ReactNode {
         <Image src={errorImage} alt="" />
       </div>
       <div className={styles.actions}>
-        <ButtonComponent onClick={reset} className={styles.button}>
+        <ButtonComponent
+          variant="primary"
+          shape="solid"
+          onClick={reset}
+          className={styles.button}
+        >
           تلاش مجدد
         </ButtonComponent>
       </div>

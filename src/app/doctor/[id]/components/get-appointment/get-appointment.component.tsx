@@ -23,7 +23,12 @@ export default function GetAppointmentComponent(): ReactNode {
       <ul>
         <li>امکان دریافت زودترین نوبت</li>
       </ul>
-      <ButtonComponent size="small" className={styles.button}>
+      <ButtonComponent
+        variant="primary"
+        shape="solid"
+        size="medium"
+        className={styles.button}
+      >
         <p>دریافت نوبت</p>
         <MingcuteArrowsLeftLine />
       </ButtonComponent>

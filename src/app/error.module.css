@@ -40,11 +40,8 @@
     grid-column: 1 / -1;
 
     .button {
-      background-color: var(--color-primary);
-
       padding-inline: 2rem;
 
-      color: var(--color-primary-opposite);
       font-size: var(--fz-400);
       font-weight: 900;
     }

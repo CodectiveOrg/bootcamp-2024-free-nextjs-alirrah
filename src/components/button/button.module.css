@@ -1,21 +1,80 @@
 .button {
-  background-color: var(--color-primary-opposite);
-
-  border: none;
-
-  padding: 0.5rem 1rem;
-
   cursor: pointer;
+
+  transition: var(--animation-duration-fast) ease-in-out;
+  transition-property: background-color, color;
+
+  &.default {
+    --primary: var(--color-primary-opposite);
+    --secondary: inherit;
+    --darker: var(--color-primary-opposite);
+  }
+
+  &.primary {
+    --primary: var(--color-primary);
+    --secondary: var(--color-primary-opposite);
+    --darker: var(--color-primary-darker);
+  }
+
+  &.danger {
+    --primary: var(--color-danger);
+    --secondary: var(--color-primary-opposite);
+    --darker: var(--color-danger);
+  }
+
+  &.inherit {
+    background-color: var(--secondary);
+
+    border: none;
+
+    color: var(--primary);
+
+    &:hover {
+      color: var(--darker);
+    }
+  }
+
+  &.solid {
+    background-color: var(--primary);
+
+    border: none;
+
+    color: var(--secondary);
+
+    &:hover {
+      background-color: var(--darker);
+    }
+  }
+
+  &.outlined {
+    background-color: var(--color-primary-opposite);
+
+    border: 1px solid var(--primary);
+
+    color: var(--primary);
+
+    &:hover {
+      background-color: var(--primary);
+
+      color: var(--secondary);
+    }
+  }
 
   &.small {
     border-radius: var(--border-radius-small);
+
+    padding: 0;
   }
 
   &.medium {
     border-radius: var(--border-radius-medium);
+
+    padding: 0.5rem 0.5rem;
   }
 
   &.large {
     border-radius: var(--border-radius-large);
+
+    padding: 0.5rem 1rem;
   }
 }

@@ -21,7 +21,11 @@ export default function InputComponent({
       {prefixIcon}
       <input {...otherPops} />
       {suffixIcon && (
-        <ButtonComponent className={styles.suffix} onClick={onSuffixClick}>
+        <ButtonComponent
+          size="small"
+          className={styles.suffix}
+          onClick={onSuffixClick}
+        >
           {suffixIcon}
         </ButtonComponent>
       )}

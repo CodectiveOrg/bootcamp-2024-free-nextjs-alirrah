@@ -25,7 +25,7 @@ export default function ExpertiseFilterComponent(): ReactNode {
         {expertise.map(([key, value]) => (
           <li key={key}>
             <ButtonComponent
-              size="small"
+              size="medium"
               className={clsx(
                 styles.button,
                 filters.expertise === value && styles.active,

@@ -52,7 +52,13 @@ export default function SignUpFormComponent(): ReactNode {
         type={showPassword ? "text" : "password"}
         autoComplete="new-password"
       />
-      <ButtonComponent className={styles.submit}>ثبت‌نام</ButtonComponent>
+      <ButtonComponent
+        variant="primary"
+        shape="solid"
+        className={styles.submit}
+      >
+        ثبت‌نام
+      </ButtonComponent>
     </form>
   );
 }

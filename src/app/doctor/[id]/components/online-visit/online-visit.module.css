@@ -31,15 +31,5 @@
     justify-content: space-between;
 
     inline-size: 100%;
-
-    background-color: var(--color-primary);
-
-    color: var(--color-primary-opposite);
-
-    transition: background-color var(--animation-duration-fast) ease-in-out;
-
-    &:hover {
-      background-color: var(--color-primary-darker);
-    }
   }
 }

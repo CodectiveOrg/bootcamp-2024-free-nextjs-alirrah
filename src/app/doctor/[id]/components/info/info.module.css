@@ -10,14 +10,6 @@
 
     padding: 0.125rem 0 0;
 
-    color: var(--color-primary);
-
-    transition: color var(--animation-duration-fast) ease-in-out;
-
-    &:hover {
-      color: var(--color-primary-darker);
-    }
-
     > svg {
       font-size: 1.25em;
     }

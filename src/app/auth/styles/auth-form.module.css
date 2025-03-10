@@ -6,14 +6,6 @@
   inline-size: 100%;
 
   .submit {
-    background-color: var(--color-primary);
-
     margin-block-end: 1rem;
-
-    color: var(--color-primary-opposite);
-
-    &:hover {
-      background-color: var(--color-primary-darker);
-    }
   }
 }

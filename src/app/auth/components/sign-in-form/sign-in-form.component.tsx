@@ -37,7 +37,13 @@ export default function SignInFormComponent(): ReactNode {
         type={showPassword ? "text" : "password"}
         autoComplete="current-password"
       />
-      <ButtonComponent className={styles.submit}>ورود</ButtonComponent>
+      <ButtonComponent
+        variant="primary"
+        shape="solid"
+        className={styles.submit}
+      >
+        ورود
+      </ButtonComponent>
     </form>
   );
 }

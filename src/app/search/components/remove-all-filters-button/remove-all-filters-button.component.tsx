@@ -6,8 +6,6 @@ import ButtonComponent from "@/components/button/button.component";
 
 import { FiltersContext } from "@/app/search/providers/filters/filters.provider";
 
-import styles from "./remove-all-filters-button.module.css";
-
 export default function RemoveAllFiltersButtonComponent(): ReactNode {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
@@ -26,7 +24,8 @@ export default function RemoveAllFiltersButtonComponent(): ReactNode {
 
   return (
     <ButtonComponent
-      className={styles.remove}
+      variant="danger"
+      shape="outlined"
       onClick={() =>
         dispatchFilters({
           type: "removed_all",

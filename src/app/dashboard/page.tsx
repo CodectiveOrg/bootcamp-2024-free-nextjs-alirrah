@@ -8,7 +8,9 @@ export default function Page(): ReactNode {
   return (
     <div className={styles.page}>
       <h1>داشبورد</h1>
-      <ButtonComponent className={styles.exit}>خروج</ButtonComponent>
+      <ButtonComponent variant="danger" shape="outlined" size="large">
+        خروج
+      </ButtonComponent>
     </div>
   );
 }

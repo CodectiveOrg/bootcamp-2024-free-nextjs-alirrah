@@ -28,8 +28,6 @@
 
   .suffix {
     display: flex;
-
-    padding: 0;
   }
 
   &:focus-within {

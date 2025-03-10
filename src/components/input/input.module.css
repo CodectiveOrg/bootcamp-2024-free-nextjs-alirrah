@@ -1,0 +1,42 @@
+.input {
+  display: flex;
+  align-items: center;
+  gap: 0.124rem;
+
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-small);
+
+  padding: 0.25rem 0.5rem;
+
+  svg {
+    color: var(--color-primary);
+
+    font-size: 1.2em;
+  }
+
+  input {
+    flex: 1 1 auto;
+
+    border: none;
+
+    background-color: transparent;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .suffix {
+    display: flex;
+
+    padding: 0;
+  }
+
+  &:focus-within {
+    border-color: var(--color-primary-darker);
+
+    svg {
+      color: var(--color-primary-darker);
+    }
+  }
+}

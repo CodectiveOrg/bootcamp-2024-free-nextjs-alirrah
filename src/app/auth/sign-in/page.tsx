@@ -15,7 +15,7 @@ export default function Page(): ReactNode {
       className={styles.page}
       showShadow
     >
-      <h1>ورورد!</h1>
+      <h1>ورود!</h1>
       <SignInFormComponent />
       <div className={styles["sign-up"]}>
         <p>قبلاً ثبت‌نام نکردید؟</p>

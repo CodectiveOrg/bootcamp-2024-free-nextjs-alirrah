@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { FormEvent, ReactNode, useRef, useState } from "react";
 
 import ButtonComponent from "@/components/button/button.component";
@@ -19,6 +21,8 @@ import { SignUpDto } from "@/dto/auth.dto";
 import styles from "@/app/auth/styles/auth-form.module.css";
 
 export default function SignUpFormComponent(): ReactNode {
+  const router = useRouter();
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const [showPassword, setShowPassword] = useState(false);
@@ -51,6 +55,7 @@ export default function SignUpFormComponent(): ReactNode {
     }
 
     formRef.current?.reset();
+    router.push("/dashboard");
   };
 
   return (

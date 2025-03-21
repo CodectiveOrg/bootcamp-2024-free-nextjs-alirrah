@@ -5,6 +5,7 @@ import { Vazirmatn } from "next/font/google";
 
 import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
+import ToasterComponent from "@/components/toaster/toaster.component";
 
 import { MenuItemType } from "@/types/menu-item.type";
 import { socialLinkType } from "@/types/social-link.type";
@@ -69,6 +70,7 @@ export default function RootLayout({
         <HeaderComponent menu={menu} />
         <main>{children}</main>
         <FooterComponent socialMedia={socialMedia} />
+        <ToasterComponent />
       </body>
     </html>
   );

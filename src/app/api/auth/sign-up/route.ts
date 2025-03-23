@@ -6,7 +6,12 @@ import prisma from "@/lib/prisma";
 
 import { ApiResponseType } from "@/types/api-response.type";
 
-import { parseBody, setAuthCookie, wrapWithTryCatch } from "@/utils/api.util";
+import {
+  checkRequiredFields,
+  parseBody,
+  setAuthCookie,
+  wrapWithTryCatch,
+} from "@/utils/api.util";
 import { hashPassword } from "@/utils/bcrypt.util";
 
 export async function POST(request: Request): Promise<ApiResponseType<null>> {
@@ -15,6 +20,17 @@ export async function POST(request: Request): Promise<ApiResponseType<null>> {
 
     if (parseError !== null) {
       return NextResponse.json({ error: parseError }, { status: 400 });
+    }
+
+    const RequiredField = checkRequiredFields<SignUpDto>(body, [
+      { attribute: "name", name: "نام و نام خانوداگی" },
+      { attribute: "username", name: "نام کاربری" },
+      { attribute: "email", name: "ایمیل" },
+      { attribute: "password", name: "رمز عبور" },
+    ]);
+
+    if (typeof RequiredField === "string") {
+      return NextResponse.json({ error: RequiredField }, { status: 400 });
     }
 
     let foundUser = await prisma.user.findUnique({

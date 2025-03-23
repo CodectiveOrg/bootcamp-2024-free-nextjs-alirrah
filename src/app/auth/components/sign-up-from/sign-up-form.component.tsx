@@ -64,17 +64,20 @@ export default function SignUpFormComponent(): ReactNode {
         prefixIcon={<MingcuteIdcardFill />}
         name="name"
         placeholder="نام و نام خانوادگی"
+        required
       />
       <InputComponent
         prefixIcon={<MingcuteUser3Fill />}
         name="username"
         placeholder="نام کاربری"
+        required
       />
       <InputComponent
         prefixIcon={<MingcuteMailFill />}
         placeholder="ایمیل"
         name="email"
         type="email"
+        required
       />
       <InputComponent
         prefixIcon={<MingcuteLockFill />}
@@ -86,6 +89,7 @@ export default function SignUpFormComponent(): ReactNode {
         placeholder="رمز عبور"
         type={showPassword ? "text" : "password"}
         autoComplete="new-password"
+        required
       />
       <ButtonComponent
         variant="primary"

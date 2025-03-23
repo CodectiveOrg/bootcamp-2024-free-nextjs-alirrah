@@ -58,7 +58,9 @@ export default function SignInFormComponent(): ReactNode {
     <form ref={formRef} onSubmit={formSubmitHandler} className={styles.form}>
       <InputComponent
         prefixIcon={<MingcuteUser3Fill />}
+        name="username"
         placeholder="نام کاربری"
+        required
       />
       <InputComponent
         prefixIcon={<MingcuteLockFill />}
@@ -66,9 +68,11 @@ export default function SignInFormComponent(): ReactNode {
           showPassword ? <MingcuteEye2Line /> : <MingcuteEyeCloseLine />
         }
         onSuffixClick={() => setShowPassword((old) => !old)}
+        name="password"
         placeholder="رمز عبور"
         type={showPassword ? "text" : "password"}
         autoComplete="current-password"
+        required
       />
       <ButtonComponent
         variant="primary"

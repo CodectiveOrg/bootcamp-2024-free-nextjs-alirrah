@@ -50,6 +50,17 @@ export async function wrapWithTryCatch<T>(
   }
 }
 
+export function checkRequiredFields<T>(
+  data: T,
+  fields: { attribute: keyof T; name: string }[],
+): string | void {
+  for (const field of fields) {
+    if (!data[field.attribute]) {
+      return `مقدار فیلد ${field.name} اجباری است.`;
+    }
+  }
+}
+
 export async function setAuthCookie(): Promise<void> {
   const cookieStore = cookies();
 
